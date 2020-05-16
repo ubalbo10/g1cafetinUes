@@ -3,6 +3,7 @@ package com.example.g1cafetinues;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,7 @@ public class HomeClienteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        /* datos quemados */
         String restaurante1="restaurante1";
         String restaurante2="restaurante2";
         String restaurante3="restaurante3";
@@ -43,15 +45,20 @@ public class HomeClienteFragment extends Fragment {
         locales.add(restaurante3);
         locales.add(restaurante4);
         locales.add(restaurante5);
+
+         /* fin */
         // Inflate the layout for this fragment
+        //RECYCLER //
         View vista=inflater.inflate(R.layout.fragment_home_cliente, container, false);
-        //llamar recyclerview
+        //llamar recyclerview//
         recycler=vista.findViewById(R.id.Recycler_locales);
         recycler.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);;
+        //layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);;
+        layoutManager=new GridLayoutManager(getActivity(),2);
         recycler.setLayoutManager(layoutManager);
         mAdapter=new AdaptadorLocalesjava(locales);
         recycler.setAdapter(mAdapter);
+            //FIN DE RECYCLER//
 
 
         return vista;

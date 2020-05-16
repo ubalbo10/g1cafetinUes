@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loggin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeClienteFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ElegirProductosFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="21dp"
-        android:text="Selecciona un restaurante :" />
+        android:layout_margin="20dp"
+        android:text="Elija los productos :" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,21 +21,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="2dp"
+            android:padding="5dp"
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/Recycler_locales"
+                android:id="@+id/Recycler_productos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="1dp"
                 android:scrollbars="vertical"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
+
 
 </LinearLayout>
