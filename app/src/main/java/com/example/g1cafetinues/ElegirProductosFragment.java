@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.g1cafetinues.interfaces.DatosFactura;
 
 import java.util.ArrayList;
 
@@ -18,7 +21,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ElegirProductosFragment extends Fragment {
+public class ElegirProductosFragment extends Fragment implements DatosFactura {
 
 
     RecyclerView recycler;
@@ -53,11 +56,19 @@ public class ElegirProductosFragment extends Fragment {
         //layoutManager= new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
         layoutManager = new GridLayoutManager(getActivity(),2);
         recycler.setLayoutManager(layoutManager);
-        mAdapter=new AdaptadorProductos(productos);
+        mAdapter=new AdaptadorProductos(productos,this);
         recycler.setAdapter(mAdapter);
         //FIN DE RECYCLER//
 
 
         return vista;
+    }
+
+
+
+    @Override
+    public void addDatos() {
+
+        Toast.makeText(requireActivity(), "me estan agregando", Toast.LENGTH_SHORT).show();
     }
 }
