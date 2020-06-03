@@ -60,7 +60,7 @@ class AdaptadorLocalesjava extends RecyclerView.Adapter<AdaptadorLocalesjava.MyV
             @Override
             public void onClick(View v) {
                 String nombre=holder.nombre.getText().toString();
-                findNavController(v).navigate(R.id.action_homeClienteFragment_to_categoryFragment);
+                findNavController(v).navigate(R.id.action_homeClienteFragment_to_elegirProductosFragment22);
                 Toast.makeText(v.getContext(),nombre,Toast.LENGTH_LONG).show();
             }
         });

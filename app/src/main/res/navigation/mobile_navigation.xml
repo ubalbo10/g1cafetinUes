@@ -19,21 +19,21 @@
         android:label="fragment_home_cliente"
         tools:layout="@layout/fragment_home_cliente" >
         <action
-            android:id="@+id/action_homeClienteFragment_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
+            android:id="@+id/action_homeClienteFragment_to_elegirProductosFragment22"
+            app:destination="@id/elegirProductosFragment2" />
     </fragment>
     <fragment
         android:id="@+id/elegirProductosFragment2"
         android:name="com.example.g1cafetinues.ElegirProductosFragment"
         android:label="fragment_elegir_productos"
-        tools:layout="@layout/fragment_elegir_productos" />
-    <fragment
-        android:id="@+id/categoryFragment"
-        android:name="com.example.g1cafetinues.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" >
+        tools:layout="@layout/fragment_elegir_productos" >
         <action
-            android:id="@+id/action_categoryFragment_to_elegirProductosFragment2"
-            app:destination="@id/elegirProductosFragment2" />
+            android:id="@+id/action_elegirProductosFragment2_to_facturaFragment"
+            app:destination="@id/facturaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/facturaFragment"
+        android:name="com.example.g1cafetinues.FacturaFragment"
+        android:label="fragment_factura"
+        tools:layout="@layout/fragment_factura" />
 </navigation>
