@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.interfaces.DatosFactura;
 import com.example.g1cafetinues.interfaces.Factura;
 import com.example.g1cafetinues.interfaces.Facturas;
@@ -49,6 +50,7 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
     Button aceptar;
     Button irCategorias;
     //Factura listenerFactura;
+    ArrayList<Producto> detalleFactura= new ArrayList<Producto>();
 
 
 
@@ -172,11 +174,18 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
 
 
 
+//    @Override
+//    public void addDatos() {
+//
+//        Toast.makeText(requireActivity(), "me estan agregando", Toast.LENGTH_SHORT).show();
+//    }
+
+
     @Override
-    public void addDatos() {
+    public void addDatos(String nombre, Float precio, Integer cantidad) {
+          Producto producto=new Producto(nombre,precio,cantidad,(precio*cantidad));
 
-        Toast.makeText(requireActivity(), "me estan agregando", Toast.LENGTH_SHORT).show();
+          detalleFactura.add(producto);
+            Facturas.detalleFactura=detalleFactura;
     }
-
-
 }

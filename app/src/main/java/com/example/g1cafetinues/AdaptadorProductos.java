@@ -72,13 +72,14 @@ class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.MyViewH
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String cantidads=holder.cantidad.getText().toString();
+                String cantidads=holder.cantidad.getText().toString();
 
-                //String nombre=holder.nombre.getText().toString();
-                //Float precio=Float.parseFloat(holder.precio.getText().toString());
+                String nombre=holder.nombre.getText().toString();
+                Float precio=Float.parseFloat(holder.precio.getText().toString());
 
-               // Integer cantidad=Integer.parseInt(cantidads);
-                listenerproductos.addDatos();
+                Integer cantidad=Integer.parseInt(cantidads);
+                listenerproductos.addDatos(nombre,precio,cantidad);
+                Toast.makeText(v.getContext(), "Producto agregado", Toast.LENGTH_SHORT).show();
             }
         });
 
