@@ -35,5 +35,50 @@
         android:id="@+id/facturaFragment"
         android:name="com.example.g1cafetinues.FacturaFragment"
         android:label="fragment_factura"
-        tools:layout="@layout/fragment_factura" />
+        tools:layout="@layout/fragment_factura" >
+        <action
+            android:id="@+id/action_facturaFragment_to_homeClienteFragment"
+            app:destination="@id/homeClienteFragment" />
+        <action
+            android:id="@+id/action_facturaFragment_to_elegirProductosFragment2"
+            app:destination="@id/elegirProductosFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/mantenimientoProductosFragment"
+        android:name="com.example.g1cafetinues.MantenimientoProductosFragment"
+        android:label="fragment_mantenimiento_productos"
+        tools:layout="@layout/fragment_mantenimiento_productos" >
+        <action
+            android:id="@+id/action_mantenimientoProductosFragment_to_agregarProductosFragment"
+            app:destination="@id/agregarProductosFragment" />
+        <action
+            android:id="@+id/action_mantenimientoProductosFragment_to_consultaProductosFragment"
+            app:destination="@id/consultaProductosFragment" />
+        <action
+            android:id="@+id/action_mantenimientoProductosFragment_to_actualizarProductoFragment"
+            app:destination="@id/actualizarProductoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoProductosFragment_to_borrarProductosFragment"
+            app:destination="@id/borrarProductosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarProductosFragment"
+        android:name="com.example.g1cafetinues.AgregarProductosFragment"
+        android:label="fragment_agregar_productos"
+        tools:layout="@layout/fragment_agregar_productos" />
+    <fragment
+        android:id="@+id/consultaProductosFragment"
+        android:name="com.example.g1cafetinues.ConsultaProductosFragment"
+        android:label="fragment_consulta_productos"
+        tools:layout="@layout/fragment_consulta_productos" />
+    <fragment
+        android:id="@+id/actualizarProductoFragment"
+        android:name="com.example.g1cafetinues.ActualizarProductoFragment"
+        android:label="fragment_actualizar_producto"
+        tools:layout="@layout/fragment_actualizar_producto" />
+    <fragment
+        android:id="@+id/borrarProductosFragment"
+        android:name="com.example.g1cafetinues.BorrarProductosFragment"
+        android:label="fragment_borrar_productos"
+        tools:layout="@layout/fragment_borrar_productos" />
 </navigation>

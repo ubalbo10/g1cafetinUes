@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.g1cafetinues.interfaces.Factura;
 import com.example.g1cafetinues.interfaces.Facturas;
 
+import static androidx.navigation.Navigation.findNavController;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -98,7 +100,24 @@ public class FacturaFragment extends Fragment  {
 
         }
         totalfactura.setText(sumaTotalFactura.toString());
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             // aqui debemos de guardar la factura
+                Toast.makeText(getActivity(), "Pedido guardado con exito", Toast.LENGTH_SHORT).show();
+                findNavController(v).navigate(R.id.action_facturaFragment_to_homeClienteFragment);
 
+            }
+        });
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "Pedido cancelado", Toast.LENGTH_SHORT).show();
+                findNavController(v).navigate(R.id.action_facturaFragment_to_homeClienteFragment);
+
+            }
+        });
 
         return vista;
     }
