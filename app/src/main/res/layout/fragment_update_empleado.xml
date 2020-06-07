@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="30dip"
+    android:stretchColumns="1" >
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualice Trabajador:"/>
+    </LinearLayout>
+
+    <TableRow>
+        <TextView android:text="IdTrabajador"/>
+        <EditText
+            android:id="@+id/editidtrabajadorupdate"
+            android:inputType="number"
+            android:maxLength="10" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="IdFacultad" />
+        <EditText
+            android:id="@+id/editidfacultadUpdate"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="IdUbicacion" />
+        <EditText
+            android:id="@+id/editIdUbicacionUpdate"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="IdLocal" />
+        <EditText
+            android:id="@+id/editIdLocalUpdate"
+            android:inputType="text"
+            android:maxLength="4" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Nombre" />
+        <EditText
+            android:id="@+id/editNombreTrabajadorUpdate"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Apellido" />
+        <EditText
+            android:id="@+id/editApellidoUpdate"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Telefono" />
+        <EditText
+            android:id="@+id/editTelefonoEmpleadoUpdate"
+            android:inputType="text"
+            android:maxLength="8" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/button_aceptar_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Limpiar" />
+
+        <Button
+            android:id="@+id/button_limpiar_addUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Aceptar" />
+    </LinearLayout>
+</TableLayout>

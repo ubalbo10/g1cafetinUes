@@ -157,4 +157,42 @@
         android:name="com.example.g1cafetinues.ConsultarPedidoFragment"
         android:label="fragment_consultar_pedido"
         tools:layout="@layout/fragment_consultar_pedido" />
+    <fragment
+        android:id="@+id/mantenimientoEmpleadoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEmpleadoFragment"
+        android:label="fragment_mantenimiento_empleado"
+        tools:layout="@layout/fragment_mantenimiento_empleado" >
+        <action
+            android:id="@+id/action_mantenimientoEmpleadoFragment_to_addEmpleadoFragment"
+            app:destination="@id/addEmpleadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEmpleadoFragment_to_updateEmpleadoFragment"
+            app:destination="@id/updateEmpleadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEmpleadoFragment_to_consultarEmpleadoFragment"
+            app:destination="@id/consultarEmpleadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEmpleadoFragment_to_deleteEmpleadoFragment"
+            app:destination="@id/deleteEmpleadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEmpleadoFragment"
+        android:name="com.example.g1cafetinues.AddEmpleadoFragment"
+        android:label="fragment_add_empleado"
+        tools:layout="@layout/fragment_add_empleado" />
+    <fragment
+        android:id="@+id/updateEmpleadoFragment"
+        android:name="com.example.g1cafetinues.UpdateEmpleadoFragment"
+        android:label="fragment_update_empleado"
+        tools:layout="@layout/fragment_update_empleado" />
+    <fragment
+        android:id="@+id/deleteEmpleadoFragment"
+        android:name="com.example.g1cafetinues.DeleteEmpleadoFragment"
+        android:label="fragment_delete_empleado"
+        tools:layout="@layout/fragment_delete_empleado" />
+    <fragment
+        android:id="@+id/consultarEmpleadoFragment"
+        android:name="com.example.g1cafetinues.ConsultarEmpleadoFragment"
+        android:label="fragment_consultar_empleado"
+        tools:layout="@layout/fragment_consultar_empleado" />
 </navigation>

@@ -20,6 +20,10 @@
             android:id="@+id/mantenimientoPedidoFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Pedido" />
+        <item
+            android:id="@+id/mantenimientoEmpleadoFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Empleados" />
     </group>
 
     <item android:title="Communicate">
