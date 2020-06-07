@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -15,10 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.g1cafetinues.Adaptadores.AdaptadorProductos;
 import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.interfaces.DatosFactura;
-import com.example.g1cafetinues.interfaces.Factura;
 import com.example.g1cafetinues.interfaces.Facturas;
+import com.example.g1cafetinues.interfaces.LocalSeleccionado;
 
 import java.util.ArrayList;
 
@@ -61,6 +61,8 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        String idselecionado= LocalSeleccionado.Idlocal.toString();
+        Toast.makeText(requireActivity(), idselecionado, Toast.LENGTH_SHORT).show();
 
         String producto1="COCA COLA 1.25LTS";
         String producto2="PEPSI 1.25LTS";

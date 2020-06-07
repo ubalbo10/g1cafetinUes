@@ -1,22 +1,22 @@
-package com.example.g1cafetinues;
+package com.example.g1cafetinues.Adaptadores;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.interfaces.DatosFactura;
 
 import java.util.ArrayList;
 
-class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.MyViewHolder> {
+public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.MyViewHolder> {
     private ArrayList<String> mDataset;
     DatosFactura listenerproductos;
 

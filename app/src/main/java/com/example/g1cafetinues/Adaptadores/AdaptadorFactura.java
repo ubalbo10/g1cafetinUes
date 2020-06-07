@@ -1,24 +1,18 @@
-package com.example.g1cafetinues;
+package com.example.g1cafetinues.Adaptadores;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.clases.Producto;
-import com.example.g1cafetinues.interfaces.DatosFactura;
-import com.example.g1cafetinues.interfaces.Facturas;
 
 import java.util.ArrayList;
 
-class AdaptadorFactura extends RecyclerView.Adapter<AdaptadorFactura.MyViewHolder> {
+public class AdaptadorFactura extends RecyclerView.Adapter<AdaptadorFactura.MyViewHolder> {
     private ArrayList<Producto> mDataset;
     //DatosFactura listenerproductos;
     //Float totalFactura;

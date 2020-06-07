@@ -81,4 +81,42 @@
         android:name="com.example.g1cafetinues.BorrarProductosFragment"
         android:label="fragment_borrar_productos"
         tools:layout="@layout/fragment_borrar_productos" />
+    <fragment
+        android:id="@+id/mantenimientoCategoriasFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCategoriasFragment"
+        android:label="fragment_mantenimiento_categorias"
+        tools:layout="@layout/fragment_mantenimiento_categorias" >
+        <action
+            android:id="@+id/action_mantenimientoCategoriasFragment_to_agregarCategoriaFragment"
+            app:destination="@id/agregarCategoriaFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCategoriasFragment_to_deleteCategoriaFragment"
+            app:destination="@id/deleteCategoriaFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCategoriasFragment_to_consultarCategoriaFragment"
+            app:destination="@id/consultarCategoriaFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCategoriasFragment_to_updateCategoriaFragment"
+            app:destination="@id/updateCategoriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarCategoriaFragment"
+        android:name="com.example.g1cafetinues.AgregarCategoriaFragment"
+        android:label="fragment_agregar_categoria"
+        tools:layout="@layout/fragment_agregar_categoria" />
+    <fragment
+        android:id="@+id/deleteCategoriaFragment"
+        android:name="com.example.g1cafetinues.DeleteCategoriaFragment"
+        android:label="fragment_delete_categoria"
+        tools:layout="@layout/fragment_delete_categoria" />
+    <fragment
+        android:id="@+id/updateCategoriaFragment"
+        android:name="com.example.g1cafetinues.UpdateCategoriaFragment"
+        android:label="fragment_update_categoria"
+        tools:layout="@layout/fragment_update_categoria" />
+    <fragment
+        android:id="@+id/consultarCategoriaFragment"
+        android:name="com.example.g1cafetinues.ConsultarCategoriaFragment"
+        android:label="fragment_consultar_categoria"
+        tools:layout="@layout/fragment_consultar_categoria" />
 </navigation>

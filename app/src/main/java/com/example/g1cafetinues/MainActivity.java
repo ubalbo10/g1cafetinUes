@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // aqui se configuran los fragmentos de la barra lateral
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.logginFragment, R.id.homeClienteFragment,
-                R.id.mantenimientoProductosFragment, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.mantenimientoProductosFragment, R.id.mantenimientoCategoriasFragment, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();

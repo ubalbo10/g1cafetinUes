@@ -3,11 +3,9 @@ package com.example.g1cafetinues;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.g1cafetinues.interfaces.Factura;
+import com.example.g1cafetinues.Adaptadores.AdaptadorFactura;
 import com.example.g1cafetinues.interfaces.Facturas;
 
 import static androidx.navigation.Navigation.findNavController;
