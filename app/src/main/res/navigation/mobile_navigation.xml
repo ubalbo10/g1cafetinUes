@@ -119,4 +119,42 @@
         android:name="com.example.g1cafetinues.ConsultarCategoriaFragment"
         android:label="fragment_consultar_categoria"
         tools:layout="@layout/fragment_consultar_categoria" />
+    <fragment
+        android:id="@+id/mantenimientoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoPedidoFragment"
+        android:label="fragment_mantenimiento_pedido"
+        tools:layout="@layout/fragment_mantenimiento_pedido" >
+        <action
+            android:id="@+id/action_mantenimientoPedidoFragment_to_crearPedidoFragment"
+            app:destination="@id/crearPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoPedidoFragment_to_updatePedidoFragment"
+            app:destination="@id/updatePedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoPedidoFragment_to_consultarPedidoFragment"
+            app:destination="@id/consultarPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoPedidoFragment_to_deletePedidoFragment"
+            app:destination="@id/deletePedidoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearPedidoFragment"
+        android:name="com.example.g1cafetinues.CrearPedidoFragment"
+        android:label="fragment_crear_pedido"
+        tools:layout="@layout/fragment_crear_pedido" />
+    <fragment
+        android:id="@+id/updatePedidoFragment"
+        android:name="com.example.g1cafetinues.UpdatePedidoFragment"
+        android:label="fragment_update_pedido"
+        tools:layout="@layout/fragment_update_pedido" />
+    <fragment
+        android:id="@+id/deletePedidoFragment"
+        android:name="com.example.g1cafetinues.DeletePedidoFragment"
+        android:label="fragment_delete_pedido"
+        tools:layout="@layout/fragment_delete_pedido" />
+    <fragment
+        android:id="@+id/consultarPedidoFragment"
+        android:name="com.example.g1cafetinues.ConsultarPedidoFragment"
+        android:label="fragment_consultar_pedido"
+        tools:layout="@layout/fragment_consultar_pedido" />
 </navigation>
