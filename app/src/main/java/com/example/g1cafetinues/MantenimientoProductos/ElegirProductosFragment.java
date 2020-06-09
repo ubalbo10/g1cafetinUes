@@ -1,4 +1,4 @@
-package com.example.g1cafetinues;
+package com.example.g1cafetinues.MantenimientoProductos;
 
 import android.os.Bundle;
 
@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.g1cafetinues.Adaptadores.AdaptadorProductos;
+import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.interfaces.DatosFactura;
 import com.example.g1cafetinues.interfaces.Facturas;

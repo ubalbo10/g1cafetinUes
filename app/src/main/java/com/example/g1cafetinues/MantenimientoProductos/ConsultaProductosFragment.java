@@ -1,4 +1,4 @@
-package com.example.g1cafetinues;
+package com.example.g1cafetinues.MantenimientoProductos;
 
 import android.os.Bundle;
 
@@ -8,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.g1cafetinues.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DeleteEmpleadoFragment extends Fragment {
+public class ConsultaProductosFragment extends Fragment {
 
-    public DeleteEmpleadoFragment() {
+    public ConsultaProductosFragment() {
         // Required empty public constructor
     }
 
@@ -23,6 +25,6 @@ public class DeleteEmpleadoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delete_empleado, container, false);
+        return inflater.inflate(R.layout.fragment_consulta_productos, container, false);
     }
 }

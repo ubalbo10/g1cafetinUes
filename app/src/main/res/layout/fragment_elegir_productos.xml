@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ElegirProductosFragment">
+    tools:context=".MantenimientoProductos.ElegirProductosFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -34,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+
                 android:text="Escoja Una Categoria De Productos"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.46"
@@ -137,12 +138,14 @@
         android:id="@+id/pantalla_productos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:textSize="25dp"
             android:text="Elija los productos :" />
 
         <ScrollView
