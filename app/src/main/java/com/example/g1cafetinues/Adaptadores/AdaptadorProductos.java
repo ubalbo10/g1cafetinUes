@@ -34,7 +34,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
             this.nombre=v.findViewById(R.id.textView_descripcion_producto);
             this.precio=v.findViewById(R.id.textView_precio_producto);
             this.imagen=v.findViewById(R.id.foto_producto);
-            this.add=v.findViewById(R.id.add);
+            this.add=v.findViewById(R.id.addRepartidor);
             this.cantidad=v.findViewById(R.id.editText_cantidad_producto);
 
         }

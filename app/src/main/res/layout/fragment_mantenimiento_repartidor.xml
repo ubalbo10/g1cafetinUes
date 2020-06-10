@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MantenimientoRepartidor.MantenimientoRepartidorFragment">
+
+    <Button
+        android:id="@+id/addRepartidor"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:text="Añadir Repartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <Button
+        android:id="@+id/eliminarRepartidor"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:text="Eliminar Repartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addRepartidor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/obtenerRepartidor"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:text="Mostrar Repartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eliminarRepartidor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/editarRepartidor"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:text="EditarRepartidor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obtenerRepartidor"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

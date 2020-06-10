@@ -94,7 +94,7 @@ public class HomeClienteFragment extends Fragment {
 
                @Override
                public void onFailure(Call<List<Local>> call, Throwable t) {
-                   Toast.makeText(getActivity(),"fallo servidor",Toast.LENGTH_LONG).show();
+                   Toast.makeText(getActivity(),"Falló servidor",Toast.LENGTH_LONG).show();
                    Log.i("falloWS",t.getMessage().toString());
                    Log.i("falloWStodo",t.getMessage().toString());
 

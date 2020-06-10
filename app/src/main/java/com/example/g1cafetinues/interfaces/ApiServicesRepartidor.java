@@ -10,13 +10,12 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.DELETE;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface ApiServices {
-
-    @GET("locales")
-    Call<List<Local>> ObtenerLocales();
+public interface ApiServicesRepartidor {
 
     //get repartidores
     @GET("repartidor/")
@@ -24,22 +23,18 @@ public interface ApiServices {
 
     //update
     @POST("actualizar-repartidor/")
-    Call<Repartidor> actualizarRepartidor(@Path("idRepartidor") String idRepartidor, @Body Repartidor repartidor);
+    Call<Repartidor> actualizarRepartidor (@Path("idRepartidor") String idRepartidor,@Body Repartidor repartidor);
 
     //Delete
     @POST("eliminar-repartidor")
-    Call<ResponseBody> eliminarRepartidor(
+    Call<ResponseBody> deleteRepartidor(
             @Query("idRepartidor") String idRepartidor);
 
     //add
     @POST("crear-repartidor")
     Call<ResponseBody> createRepartidor(@Body Repartidor obj);
 
-
-
-
-//group/{id}/users    Call<List<User>> groupList(@Path("id") int groupId);
-//si ponemos query en lugar de path agrega ?nombre="guillermo"
-
-
 }
+
+
+

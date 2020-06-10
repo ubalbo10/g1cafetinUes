@@ -24,6 +24,11 @@
             android:id="@+id/mantenimientoEmpleadoFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Empleados" />
+        <item
+            android:id="@+id/mantenimientoRepartidorFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Repartidor" />
+
     </group>
 
     <item android:title="Communicate">

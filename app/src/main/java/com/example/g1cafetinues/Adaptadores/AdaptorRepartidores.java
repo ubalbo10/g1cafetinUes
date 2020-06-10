@@ -1,24 +1,27 @@
 package com.example.g1cafetinues.Adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.TextView;
+import com.example.g1cafetinues.clases.Repartidor;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.g1cafetinues.R;
-import com.example.g1cafetinues.clases.Local;
-import com.example.g1cafetinues.interfaces.LocalSeleccionado;
+import com.example.g1cafetinues.clases.Repartidor;
 
 import java.util.List;
 
 import static androidx.navigation.Navigation.findNavController;
 
-public class AdaptorLocales extends RecyclerView.Adapter<AdaptorLocales.MyViewHolder> {
-    private List<Local> mDataset;
+public class AdaptorRepartidores extends RecyclerView.Adapter<AdaptorRepartidores.MyViewHolder> {
+    private List<Repartidor> mDataset;
 
 
     // Provide a reference to the views for each data item
@@ -26,30 +29,33 @@ public class AdaptorLocales extends RecyclerView.Adapter<AdaptorLocales.MyViewHo
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+        public TextView idrepartidor;
         public TextView nombre;
-        public TextView idlocal;
-        public ImageButton button;
+        public TextView apellido;
+        public TextView telefono;
+        Button button;
         public MyViewHolder(View v) {
             super(v);
-            this.button=v.findViewById(R.id.imageButton_locales);
-            this.nombre=v.findViewById(R.id.textView_repartidor);
-            this.idlocal=v.findViewById(R.id.idlocalparapasar);
+            this.idrepartidor=v.findViewById(R.id.text_idrep);
+            this.nombre=v.findViewById(R.id.text_nomrep);
+            this.apellido=v.findViewById(R.id.text_ApeRepartidor);
+            this.telefono=v.findViewById(R.id.text_telrep);
 
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public AdaptorLocales(List<Local> myDataset) {
+    public AdaptorRepartidores(List<Repartidor> myDataset) {
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public AdaptorLocales.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                          int viewType) {
+    public AdaptorRepartidores.MyViewHolder onCreateViewHolder(ViewGroup parent,
+                                                               int viewType) {
         // create a new view
         View v = (View) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_locales, parent, false);
+                .inflate(R.layout.item_repartidores, parent, false);
 
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
@@ -60,18 +66,15 @@ public class AdaptorLocales extends RecyclerView.Adapter<AdaptorLocales.MyViewHo
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.nombre.setText(mDataset.get(position).getNOMBRE());
-        holder.idlocal.setText(mDataset.get(position).getIDLOCAL().toString());
+        holder.idrepartidor.setText(mDataset.get(position).getIDREPARTIDOR());
+        holder.nombre.setText(mDataset.get(position).getNOMREPARTIDOR().toString());
         //Log.i("idlocal",IdLocal.toString());
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre=holder.nombre.getText().toString();
-                findNavController(v).navigate(R.id.action_homeClienteFragment_to_elegirProductosFragment22);
-
-                LocalSeleccionado.Idlocal=Integer.parseInt(holder.idlocal.getText().toString());
-
-                Toast.makeText(v.getContext(),nombre,Toast.LENGTH_LONG).show();
+                String idrepartidor=holder.idrepartidor.getText().toString();
+                findNavController(v).navigate(R.id.action_mantenimientoRepartidorFragment_to_agregarRepartidorFragment);
+                Toast.makeText(v.getContext(),idrepartidor,Toast.LENGTH_LONG).show();
 
             }
         });

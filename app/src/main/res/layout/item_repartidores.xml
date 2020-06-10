@@ -30,30 +30,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:id="@+id/imageButton_locales"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:foregroundGravity="center_vertical"
-                app:layout_constraintBottom_toTopOf="@+id/textView_repartidor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_room_service_black_24dp" />
-
             <TextView
                 android:id="@+id/textView_repartidor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="Restaurante "
+                android:text="Repartidor"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton_locales"
-                app:layout_constraintStart_toStartOf="@+id/imageButton_locales"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton_locales" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.242" />
+
+            <TextView
+                android:id="@+id/textView_NombreRep"
+                android:layout_width="55dp"
+                android:layout_height="19dp"
+                android:text="Nombre"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

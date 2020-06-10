@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/logginFragment"
         android:name="com.example.g1cafetinues.LogginFragment"
-        android:label="fragment_loggin"
+        android:label="Loggin"
         tools:layout="@layout/fragment_loggin" >
         <action
             android:id="@+id/irahome"
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/homeClienteFragment"
         android:name="com.example.g1cafetinues.HomeClienteFragment"
-        android:label="fragment_home_cliente"
+        android:label="Home_cliente"
         tools:layout="@layout/fragment_home_cliente" >
         <action
             android:id="@+id/action_homeClienteFragment_to_elegirProductosFragment22"
@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/elegirProductosFragment2"
         android:name="com.example.g1cafetinues.ElegirProductosFragment"
-        android:label="fragment_elegir_productos"
+        android:label="Elegir_productos"
         tools:layout="@layout/fragment_elegir_productos" >
         <action
             android:id="@+id/action_elegirProductosFragment2_to_facturaFragment"
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/facturaFragment"
         android:name="com.example.g1cafetinues.FacturaFragment"
-        android:label="fragment_factura"
+        android:label="Factura"
         tools:layout="@layout/fragment_factura" >
         <action
             android:id="@+id/action_facturaFragment_to_homeClienteFragment"
@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/mantenimientoProductosFragment"
         android:name="com.example.g1cafetinues.MantenimientoProductosFragment"
-        android:label="fragment_mantenimiento_productos"
+        android:label="Mantenimiento_productos"
         tools:layout="@layout/fragment_mantenimiento_productos" >
         <action
             android:id="@+id/action_mantenimientoProductosFragment_to_agregarProductosFragment"
@@ -64,27 +64,27 @@
     <fragment
         android:id="@+id/agregarProductosFragment"
         android:name="com.example.g1cafetinues.AgregarProductosFragment"
-        android:label="fragment_agregar_productos"
+        android:label="Agregar_productos"
         tools:layout="@layout/fragment_agregar_productos" />
     <fragment
         android:id="@+id/consultaProductosFragment"
         android:name="com.example.g1cafetinues.ConsultaProductosFragment"
-        android:label="fragment_consulta_productos"
+        android:label="Consulta_productos"
         tools:layout="@layout/fragment_consulta_productos" />
     <fragment
         android:id="@+id/actualizarProductoFragment"
         android:name="com.example.g1cafetinues.ActualizarProductoFragment"
-        android:label="fragment_actualizar_producto"
+        android:label="Actualizar_producto"
         tools:layout="@layout/fragment_actualizar_producto" />
     <fragment
         android:id="@+id/borrarProductosFragment"
         android:name="com.example.g1cafetinues.BorrarProductosFragment"
-        android:label="fragment_borrar_productos"
+        android:label="Borrar_productos"
         tools:layout="@layout/fragment_borrar_productos" />
     <fragment
         android:id="@+id/mantenimientoCategoriasFragment"
         android:name="com.example.g1cafetinues.MantenimientoCategoriasFragment"
-        android:label="fragment_mantenimiento_categorias"
+        android:label="Mantenimiento_categorias"
         tools:layout="@layout/fragment_mantenimiento_categorias" >
         <action
             android:id="@+id/action_mantenimientoCategoriasFragment_to_agregarCategoriaFragment"
@@ -102,27 +102,27 @@
     <fragment
         android:id="@+id/agregarCategoriaFragment"
         android:name="com.example.g1cafetinues.AgregarCategoriaFragment"
-        android:label="fragment_agregar_categoria"
+        android:label="Agregar_categoria"
         tools:layout="@layout/fragment_agregar_categoria" />
     <fragment
         android:id="@+id/deleteCategoriaFragment"
         android:name="com.example.g1cafetinues.DeleteCategoriaFragment"
-        android:label="fragment_delete_categoria"
+        android:label="Delete_categoria"
         tools:layout="@layout/fragment_delete_categoria" />
     <fragment
         android:id="@+id/updateCategoriaFragment"
         android:name="com.example.g1cafetinues.UpdateCategoriaFragment"
-        android:label="fragment_update_categoria"
+        android:label="Update_categoria"
         tools:layout="@layout/fragment_update_categoria" />
     <fragment
         android:id="@+id/consultarCategoriaFragment"
         android:name="com.example.g1cafetinues.ConsultarCategoriaFragment"
-        android:label="fragment_consultar_categoria"
+        android:label="Consultar_categoria"
         tools:layout="@layout/fragment_consultar_categoria" />
     <fragment
         android:id="@+id/mantenimientoPedidoFragment"
         android:name="com.example.g1cafetinues.MantenimientoPedidoFragment"
-        android:label="fragment_mantenimiento_pedido"
+        android:label="Mantenimiento_pedido"
         tools:layout="@layout/fragment_mantenimiento_pedido" >
         <action
             android:id="@+id/action_mantenimientoPedidoFragment_to_crearPedidoFragment"
@@ -140,27 +140,27 @@
     <fragment
         android:id="@+id/crearPedidoFragment"
         android:name="com.example.g1cafetinues.CrearPedidoFragment"
-        android:label="fragment_crear_pedido"
+        android:label="Crear_pedido"
         tools:layout="@layout/fragment_crear_pedido" />
     <fragment
         android:id="@+id/updatePedidoFragment"
         android:name="com.example.g1cafetinues.UpdatePedidoFragment"
-        android:label="fragment_update_pedido"
+        android:label="Update_pedido"
         tools:layout="@layout/fragment_update_pedido" />
     <fragment
         android:id="@+id/deletePedidoFragment"
         android:name="com.example.g1cafetinues.DeletePedidoFragment"
-        android:label="fragment_delete_pedido"
+        android:label="Delete_pedido"
         tools:layout="@layout/fragment_delete_pedido" />
     <fragment
         android:id="@+id/consultarPedidoFragment"
         android:name="com.example.g1cafetinues.ConsultarPedidoFragment"
-        android:label="fragment_consultar_pedido"
+        android:label="Consultar_pedido"
         tools:layout="@layout/fragment_consultar_pedido" />
     <fragment
         android:id="@+id/mantenimientoEmpleadoFragment"
         android:name="com.example.g1cafetinues.MantenimientoEmpleadoFragment"
-        android:label="fragment_mantenimiento_empleado"
+        android:label="Mantenimiento_empleado"
         tools:layout="@layout/fragment_mantenimiento_empleado" >
         <action
             android:id="@+id/action_mantenimientoEmpleadoFragment_to_addEmpleadoFragment"
@@ -178,21 +178,59 @@
     <fragment
         android:id="@+id/addEmpleadoFragment"
         android:name="com.example.g1cafetinues.AddEmpleadoFragment"
-        android:label="fragment_add_empleado"
+        android:label="Add_empleado"
         tools:layout="@layout/fragment_add_empleado" />
     <fragment
         android:id="@+id/updateEmpleadoFragment"
         android:name="com.example.g1cafetinues.UpdateEmpleadoFragment"
-        android:label="fragment_update_empleado"
+        android:label="Update_empleado"
         tools:layout="@layout/fragment_update_empleado" />
     <fragment
         android:id="@+id/deleteEmpleadoFragment"
         android:name="com.example.g1cafetinues.DeleteEmpleadoFragment"
-        android:label="fragment_delete_empleado"
+        android:label="Delete_empleado"
         tools:layout="@layout/fragment_delete_empleado" />
     <fragment
         android:id="@+id/consultarEmpleadoFragment"
         android:name="com.example.g1cafetinues.ConsultarEmpleadoFragment"
-        android:label="fragment_consultar_empleado"
+        android:label="Consultar_empleado"
         tools:layout="@layout/fragment_consultar_empleado" />
+    <fragment
+        android:id="@+id/mantenimientoRepartidorFragment"
+        android:name="com.example.g1cafetinues.ui.MantenimientoRepartidor.MantenimientoRepartidorFragment"
+        android:label="Mantenimiento_repartidor"
+        tools:layout="@layout/fragment_mantenimiento_repartidor" >
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_addRepartidorFragment"
+            app:destination="@id/addRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_eliminarRepartidorFragment"
+            app:destination="@id/eliminarRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_obtenerRepartidorFragment"
+            app:destination="@id/obtenerRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_agregarRepartidorFragment"
+            app:destination="@id/editarRepartidorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRepartidorFragment"
+        android:name="com.example.g1cafetinues.ui.MantenimientoRepartidor.AddRepartidorFragment"
+        android:label="Add_repartidor"
+        tools:layout="@layout/fragment_add_repartidor" />
+    <fragment
+        android:id="@+id/eliminarRepartidorFragment"
+        android:name="com.example.g1cafetinues.ui.MantenimientoRepartidor.EliminarRepartidorFragment"
+        android:label="Eliminar_repartidor"
+        tools:layout="@layout/fragment_eliminar_repartidor" />
+    <fragment
+        android:id="@+id/obtenerRepartidorFragment"
+        android:name="com.example.g1cafetinues.ui.MantenimientoRepartidor.ObtenerRepartidorFragment"
+        android:label="Obtener_repartidor"
+        tools:layout="@layout/fragment_obtener_repartidor" />
+    <fragment
+        android:id="@+id/editarRepartidorFragment"
+        android:name="com.example.g1cafetinues.ui.MantenimientoRepartidor.EditarRepartidorFragment"
+        android:label="Editar_repartidor"
+        tools:layout="@layout/fragment_editar_repartidor" />
 </navigation>

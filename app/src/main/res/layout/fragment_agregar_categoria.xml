@@ -16,14 +16,14 @@
     <TableRow>
         <TextView android:text="IdCategoria"/>
         <EditText
-            android:id="@+id/editidcategoria"
+            android:id="@+id/edit_idRepartidor"
             android:inputType="number"
             android:maxLength="10" />
     </TableRow>
     <TableRow>
         <TextView android:text="Nombre" />
         <EditText
-            android:id="@+id/editnombrecategoria"
+            android:id="@+id/editar_NombreRepartidor"
             android:inputType="text"
             android:maxLength="30" />
     </TableRow>
@@ -36,14 +36,14 @@
 
 
         <Button
-            android:id="@+id/button_aceptar_agregarCategoria"
+            android:id="@+id/button_aceptar_agregarRepartidor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Limpiar" />
 
         <Button
-            android:id="@+id/button_limpiar_addCategoria"
+            android:id="@+id/button_limpiar_agregarRepartidor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

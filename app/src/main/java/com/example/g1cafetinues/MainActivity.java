@@ -2,6 +2,7 @@ package com.example.g1cafetinues;
 
 import android.os.Bundle;
 
+import com.example.g1cafetinues.ui.MantenimientoRepartidor.RetrofitRepartidor;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -22,8 +23,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
+    private RetrofitRepartidor apiServices;
 
     @Override
     public void onBackPressed() {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.logginFragment, R.id.homeClienteFragment,
                 R.id.mantenimientoProductosFragment, R.id.mantenimientoCategoriasFragment, R.id.homeClienteFragment,
+                R.id.mantenimientoRepartidorFragment,
                 R.id.mantenimientoPedidoFragment,R.id.mantenimientoEmpleadoFragment, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
@@ -53,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
