@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_buscarPedido"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID Pedido"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/btn_buscarPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            android:text="BUSCAR" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Cantidad"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID Detalle"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID Pedido"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID Producto"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/btn_actualizarAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText_buscarIdDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:layout_marginBottom="122dp"
+            android:hint="Ingrese ID Pedido"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/editText_actulizarCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/ingrese_cantidad"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editText_actualizarIdDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/ingrese_id_detalle"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editText_actualizarIdPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/ingrese_id_pedido"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editText_actualizarIdProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/ingrese_id_producto"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_actualizarCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCELAR" />
+    </LinearLayout>
+</LinearLayout>

@@ -16,4 +16,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="agregar_detalle">Agregar Detalle</string>
+    <string name="actualizar_detalle">Actualizar Detalle</string>
+    <string name="consultar_detalle">Consultar Detalle</string>
+    <string name="eliminar_detalle">Eliminar Detalle</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="id_detalle">ID Detalle</string>
+    <string name="ingrese_cantidad">Ingrese Cantidad</string>
+    <string name="ingrese_id_detalle">Ingrese ID Detalle</string>
+    <string name="ingrese_id_pedido">Ingrese ID Pedido</string>
+    <string name="ingrese_id_producto">Ingrese ID Producto</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="aceptar">ACEPTAR</string>
 </resources>
