@@ -1,4 +1,4 @@
-package com.example.g1cafetinues.detalle_producto_pedido;
+package com.example.g1cafetinues.Mantenimiento_Encargado;
 
 import android.os.Bundle;
 
@@ -28,9 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EliminarDetalleProductoPedidoFragment extends Fragment {
+public class EliminarEncargadoFragment extends Fragment {
 
-    public EliminarDetalleProductoPedidoFragment() {
+    public EliminarEncargadoFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class EliminarDetalleProductoPedidoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_eliminar_detalle_producto_pedido, container, false);
+        View vista=inflater.inflate(R.layout.fragment_eliminar_encargado, container, false);
 
-        Button eliminar=vista.findViewById(R.id.btn_EliminarDetalle);
+        Button eliminar=vista.findViewById(R.id.btn_eliminarEncargado);
 
-        final EditText eliminarDetalle=vista.findViewById(R.id.editText_eliminarDetalle);
+        final EditText idBuscarDetalle=vista.findViewById(R.id.editText_eliminarEncargado);
 
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +55,11 @@ public class EliminarDetalleProductoPedidoFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                Call<String> call=apiServices.eliminarDetalleProductoPedido(Integer.parseInt(eliminarDetalle.getText().toString()));
+                Call<List<DetalleProductoPedido>> call=apiServices.eliminarEncargado(Integer.parseInt(idBuscarDetalle.getText().toString()));
 
-                call.enqueue(new Callback<String>() {
+                call.enqueue(new Callback<List<DetalleProductoPedido>>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<List<DetalleProductoPedido>> call, Response<List<DetalleProductoPedido>> response) {
                         if(!response.isSuccessful()){
                             Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
@@ -67,16 +67,16 @@ public class EliminarDetalleProductoPedidoFragment extends Fragment {
                         }
 
                         Toast.makeText(getContext(),"Detalle Eliminado",Toast.LENGTH_LONG).show();
-                        eliminarDetalle.setText("");
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<List<DetalleProductoPedido>> call, Throwable t) {
                         Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                     }
                 });
             }
         });
+
         return vista;
     }
 }

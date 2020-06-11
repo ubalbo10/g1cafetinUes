@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txt_cantidad"
+            android:id="@+id/txt_idEncargado"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
@@ -23,7 +23,7 @@
             tools:ignore="RtlCompat" />
 
         <TextView
-            android:id="@+id/txt_idDetalle"
+            android:id="@+id/txt_nombre"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
@@ -33,7 +33,7 @@
             tools:ignore="RtlCompat" />
 
         <TextView
-            android:id="@+id/txt_idPedido"
+            android:id="@+id/txt_apellido"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
@@ -43,7 +43,7 @@
             tools:ignore="RtlCompat" />
 
         <TextView
-            android:id="@+id/txt_idProducto"
+            android:id="@+id/txt_telefono"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
@@ -53,7 +53,7 @@
             tools:ignore="RtlCompat" />
 
         <Button
-            android:id="@+id/btn_agregarAceptar"
+            android:id="@+id/btn_agregarAceptarDetalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/aceptar" />
@@ -67,7 +67,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText_cantidad"
+            android:id="@+id/editText_agregarCantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
@@ -78,7 +78,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editText_idDetalle"
+            android:id="@+id/editText_agregarIdDetalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
@@ -89,7 +89,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editText_idPedido"
+            android:id="@+id/editText_agregarIdPedido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
@@ -100,7 +100,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editText_idProducto"
+            android:id="@+id/editText_agregarTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
@@ -111,7 +111,7 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/btn_agregarCancelar"
+            android:id="@+id/btn_agregarCancelarEncargado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cancelar" />

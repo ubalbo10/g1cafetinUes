@@ -13,16 +13,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txt_buscarIdDetalle"
+            android:id="@+id/txt_idEncargado"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:text="ID Detalle"
+            android:text="ID ENCARGADO"
             tools:ignore="RtlCompat" />
 
         <Button
-            android:id="@+id/btn_buscarDetalle"
+            android:id="@+id/btn_buscarEncargdo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="75dp"
@@ -34,7 +34,7 @@
             android:layout_height="45dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:text="Cantidad"
+            android:text="ID Encargado"
             android:layout_marginBottom="25dp"
             tools:ignore="RtlCompat" />
 
@@ -44,7 +44,7 @@
             android:layout_height="45dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:text="ID Detalle"
+            android:text="Nombre"
             android:layout_marginBottom="25dp"
             tools:ignore="RtlCompat" />
 
@@ -54,7 +54,7 @@
             android:layout_height="45dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:text="ID Pedido"
+            android:text="Apellido"
             android:layout_marginBottom="25dp"
             tools:ignore="RtlCompat" />
 
@@ -64,7 +64,7 @@
             android:layout_height="45dp"
             android:gravity="center_vertical"
             android:textAlignment="center"
-            android:text="ID Producto"
+            android:text="Telefono"
             android:layout_marginBottom="25dp"
             tools:ignore="RtlCompat" />
 
@@ -78,17 +78,17 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText_buscarIdDetalle"
+            android:id="@+id/editText_buscarIdEncargado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
             android:layout_marginBottom="122dp"
-            android:hint="Ingrese ID Detalle"
+            android:hint="Ingrese ID Encargado"
             android:inputType="textMultiLine" />
 
         <TextView
-            android:id="@+id/textView_consultarCantidad"
+            android:id="@+id/textView_buscarIdEncargado"
             android:layout_width="match_parent"
             android:layout_marginBottom="25dp"
             android:layout_height="45dp"
@@ -97,7 +97,7 @@
             tools:ignore="RtlCompat"/>
 
         <TextView
-            android:id="@+id/textView_consultarIdDetalle"
+            android:id="@+id/textView_buscarNombre"
             android:layout_width="match_parent"
             android:layout_marginBottom="25dp"
             android:layout_height="45dp"
@@ -106,7 +106,7 @@
             tools:ignore="RtlCompat" />
 
         <TextView
-            android:id="@+id/textView_consultarIdPedido"
+            android:id="@+id/textView_buscarapellido"
             android:layout_width="match_parent"
             android:layout_marginBottom="25dp"
             android:layout_height="45dp"
@@ -115,7 +115,7 @@
             tools:ignore="RtlCompat" />
 
         <TextView
-            android:id="@+id/textView_consultarIProducto"
+            android:id="@+id/textView_buscarTelefono"
             android:layout_width="match_parent"
             android:layout_marginBottom="25dp"
             android:layout_height="45dp"

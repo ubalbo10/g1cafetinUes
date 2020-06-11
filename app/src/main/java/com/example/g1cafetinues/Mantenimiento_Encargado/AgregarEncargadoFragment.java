@@ -1,4 +1,4 @@
-package com.example.g1cafetinues.detalle_producto_pedido;
+package com.example.g1cafetinues.Mantenimiento_Encargado;
 
 import android.os.Bundle;
 
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
-import com.example.g1cafetinues.clases.DetalleProductoPedido;
+import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.interfaces.ApiServices;
 import com.example.g1cafetinues.interfaces.UrlApi;
 
@@ -26,9 +26,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AgregarDetalleProductoPedidoFragment extends Fragment {
+public class AgregarEncargadoFragment extends Fragment {
 
-    public AgregarDetalleProductoPedidoFragment() {
+    public AgregarEncargadoFragment() {
         // Required empty public constructor
     }
 
@@ -36,15 +36,15 @@ public class AgregarDetalleProductoPedidoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View vista=inflater.inflate(R.layout.fragment_agregar_detalle_producto_pedido, container, false);
+
+        View vista = inflater.inflate(R.layout.fragment_agregar_encargado, container, false);
 
         Button aceptar=vista.findViewById(R.id.btn_agregarAceptarDetalle);
 
-        final TextView cantidad=vista.findViewById(R.id.editText_agregarCantidad);
-        final TextView idDetalle=vista.findViewById(R.id.editText_agregarIdDetalle);
-        final TextView idPedido=vista.findViewById(R.id.editText_agregarIdPedido);
-        final TextView idProducto=vista.findViewById(R.id.editText_agregarTelefono);
+        final TextView idEncargado=vista.findViewById(R.id.editText_agregarCantidad);
+        final TextView nombre=vista.findViewById(R.id.editText_agregarCantidad);
+        final TextView apellido=vista.findViewById(R.id.editText_agregarIdPedido);
+        final TextView telefono=vista.findViewById(R.id.editText_agregarTelefono);
 
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,18 +57,17 @@ public class AgregarDetalleProductoPedidoFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                DetalleProductoPedido detalle=new DetalleProductoPedido();
-                detalle.setCANTIDADPEDIDO(Integer.parseInt(cantidad.getText().toString()));
-                detalle.setIDDETALLE(Integer.parseInt(idDetalle.getText().toString()));
-                detalle.setIDPEDIDO(Integer.parseInt(idPedido.getText().toString()));
-                detalle.setIDPRODUCTO(Integer.parseInt(idProducto.getText().toString()));
+                Encargado encargado=new Encargado();
+                encargado.setIDENCARGADO(Integer.parseInt(idEncargado.getText().toString()));
+                encargado.setNOMBRE(nombre.getText().toString());
+                encargado.setAPELLIDO(apellido.getText().toString());
+                encargado.setTELEFONO(Integer.parseInt(telefono.getText().toString()));
 
-                Call<String> call=apiServices.agregarDetalleProductoPedido(detalle.getCANTIDADPEDIDO(),
-                        detalle.getIDDETALLE(),detalle.getIDPEDIDO(),detalle.getIDPRODUCTO());
+                Call<Encargado> call=apiServices.agregarEncargado(encargado.getIDENCARGADO(),encargado.getNOMBRE(),encargado.getAPELLIDO(),encargado.getTELEFONO());
 
-                call.enqueue(new Callback<String>() {
+                call.enqueue(new Callback<Encargado>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<Encargado> call, Response<Encargado> response) {
                         if(!response.isSuccessful()){
                             Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
@@ -76,14 +75,14 @@ public class AgregarDetalleProductoPedidoFragment extends Fragment {
                         }
 
                         Toast.makeText(getContext(),"Detalle Agregado",Toast.LENGTH_LONG).show();
-                        cantidad.setText("");
-                        idDetalle.setText("");
-                        idPedido.setText("");
-                        idProducto.setText("");
+                        idEncargado.setText("");
+                        nombre.setText("");
+                        apellido.setText("");
+                        telefono.setText("");
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<Encargado> call, Throwable t) {
                         Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                         Log.d("ERROR", "onFailure: "+ t.hashCode());
                     }

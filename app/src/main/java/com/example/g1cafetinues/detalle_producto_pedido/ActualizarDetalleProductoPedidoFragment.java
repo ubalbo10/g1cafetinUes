@@ -77,7 +77,7 @@ public class ActualizarDetalleProductoPedidoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View vista=inflater.inflate(R.layout.fragment_actualizar_detalle_producto_pedido, container, false);
 
-        Button buscar=vista.findViewById(R.id.btn_buscarPedido);
+        Button buscar=vista.findViewById(R.id.btn_buscarDetalle);
         Button actualizar=vista.findViewById(R.id.btn_actualizarAceptar);
 
         final EditText idBuscarDetalle=vista.findViewById(R.id.editText_buscarIdDetalle);
@@ -102,11 +102,12 @@ public class ActualizarDetalleProductoPedidoFragment extends Fragment {
                 detalle.setIDPEDIDO(Integer.parseInt(idPedido.getText().toString()));
                 detalle.setIDPRODUCTO(Integer.parseInt(idProducto.getText().toString()));
 
-                Call<DetalleProductoPedido> call=apiServices.actualizarDetalleProductoPedido(detalle);
+                Call<String> call=apiServices.actualizarDetalleProductoPedido(detalle.getCANTIDADPEDIDO(),
+                        detalle.getIDDETALLE(),detalle.getIDPEDIDO(),detalle.getIDPRODUCTO());
 
-                call.enqueue(new Callback<DetalleProductoPedido>() {
+                call.enqueue(new Callback<String>() {
                     @Override
-                    public void onResponse(Call<DetalleProductoPedido> call, Response<DetalleProductoPedido> response) {
+                    public void onResponse(Call<String> call, Response<String> response) {
                         if(!response.isSuccessful()){
                             Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
@@ -114,6 +115,7 @@ public class ActualizarDetalleProductoPedidoFragment extends Fragment {
                         }
 
                         Toast.makeText(getContext(),"Detalle Actualizado",Toast.LENGTH_LONG).show();
+                        idBuscarDetalle.setText("");
                         cantidad.setText("");
                         idDetalle.setText("");
                         idPedido.setText("");
@@ -122,7 +124,7 @@ public class ActualizarDetalleProductoPedidoFragment extends Fragment {
                     }
 
                     @Override
-                    public void onFailure(Call<DetalleProductoPedido> call, Throwable t) {
+                    public void onFailure(Call<String> call, Throwable t) {
                         Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                     }
                 });

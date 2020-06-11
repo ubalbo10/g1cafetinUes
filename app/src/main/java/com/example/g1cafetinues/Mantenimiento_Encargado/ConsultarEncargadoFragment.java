@@ -1,4 +1,4 @@
-package com.example.g1cafetinues.detalle_producto_pedido;
+package com.example.g1cafetinues.Mantenimiento_Encargado;
 
 import android.os.Bundle;
 
@@ -10,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
+import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.interfaces.ApiServices;
 import com.example.g1cafetinues.interfaces.UrlApi;
 
@@ -27,25 +29,30 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
+ * Use the {@link ConsultarEncargadoFragment#newInstance} factory method to
+ * create an instance of this fragment.
  */
-public class EliminarDetalleProductoPedidoFragment extends Fragment {
+public class ConsultarEncargadoFragment extends Fragment {
 
-    public EliminarDetalleProductoPedidoFragment() {
+    public ConsultarEncargadoFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_eliminar_detalle_producto_pedido, container, false);
+        View vista = inflater.inflate(R.layout.fragment_consultar_encargado, container, false);
 
-        Button eliminar=vista.findViewById(R.id.btn_EliminarDetalle);
+        Button buscar=vista.findViewById(R.id.btn_buscarEncargdo);
 
-        final EditText eliminarDetalle=vista.findViewById(R.id.editText_eliminarDetalle);
+        final EditText idBuscarEncargado=vista.findViewById(R.id.editText_buscarIdEncargado);
+        final TextView idEncargado=vista.findViewById(R.id.textView_buscarIdEncargado);
+        final TextView nombre=vista.findViewById(R.id.textView_buscarNombre);
+        final TextView apellido=vista.findViewById(R.id.textView_buscarapellido);
+        final TextView telefono=vista.findViewById(R.id.textView_buscarTelefono);
 
-        eliminar.setOnClickListener(new View.OnClickListener() {
+        buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Retrofit retrofit=new Retrofit.Builder()
@@ -55,23 +62,26 @@ public class EliminarDetalleProductoPedidoFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                Call<String> call=apiServices.eliminarDetalleProductoPedido(Integer.parseInt(eliminarDetalle.getText().toString()));
+                Call<List<Encargado>> call=apiServices.obtenerEncargado(Integer.parseInt(idBuscarEncargado.getText().toString()));
 
-                call.enqueue(new Callback<String>() {
+                call.enqueue(new Callback<List<Encargado>>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<List<Encargado>> call, Response<List<Encargado>> response) {
                         if(!response.isSuccessful()){
                             Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
                             return;
                         }
 
-                        Toast.makeText(getContext(),"Detalle Eliminado",Toast.LENGTH_LONG).show();
-                        eliminarDetalle.setText("");
+                        List<Encargado> listaEncargado=response.body();
+                        idEncargado.setText(Integer.parseInt(listaEncargado.get(0).getIDENCARGADO().toString()));
+                        nombre.setText(listaEncargado.get(0).getNOMBRE().toString());
+                        apellido.setText(listaEncargado.get(0).getAPELLIDO().toString());
+                        telefono.setText(Integer.parseInt(listaEncargado.get(0).getTELEFONO().toString()));
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<List<Encargado>> call, Throwable t) {
                         Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
                     }
                 });

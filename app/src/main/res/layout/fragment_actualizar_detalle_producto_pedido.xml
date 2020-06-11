@@ -13,16 +13,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txt_buscarPedido"
+            android:id="@+id/txt_buscarActualizarEncargado"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
+            android:text="@string/id_detalle"
             android:textAlignment="center"
-            android:text="ID Pedido"
             tools:ignore="RtlCompat" />
 
         <Button
-            android:id="@+id/btn_buscarPedido"
+            android:id="@+id/btn_buscarDetalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="75dp"
@@ -86,11 +86,11 @@
             android:id="@+id/editText_buscarIdDetalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="122dp"
             android:ems="10"
             android:gravity="start|top"
-            android:layout_marginBottom="122dp"
-            android:hint="Ingrese ID Pedido"
-            android:inputType="textMultiLine" />
+            android:hint="@string/ingrese_id_detalle"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editText_actulizarCantidad"
