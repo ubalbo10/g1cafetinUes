@@ -70,17 +70,17 @@
 
 
         <Button
-            android:id="@+id/button_aceptar_agregar"
+            android:id="@+id/button_aceptar_agregar_empleado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="aceptar" />
+
+        <Button
+            android:id="@+id/button_limpiar_add_empleado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Limpiar" />
-
-        <Button
-            android:id="@+id/button_limpiar_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Aceptar" />
     </LinearLayout>
 </TableLayout>

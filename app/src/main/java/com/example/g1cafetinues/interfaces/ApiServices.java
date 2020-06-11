@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiServices {
     //obtener todos los locales
@@ -16,7 +17,17 @@ public interface ApiServices {
     Call<List<Local>> ObtenerLocales();
     //obtener empleado
     @POST("obtener-empleado")
-    Call<Trabajador> ObtenerTrabajador(@Body String idtrabajador);
+    Call<Trabajador> ObtenerTrabajador(@Query("Idtrabajador") String idtrabajador);
+    //crear empleado
+    @POST("registrar-empleado-ues")
+    Call<String> RegistrarEmpleado(@Query("idTrabajador") String idTrabajador,
+                                    @Query("IdLocal") String idLocal,
+                                    @Query("idUbicacion") String idUbicacion,
+                                    @Query("idFacultad") String idFacultad,
+                                    @Query("nombre") String nombre,
+                                    @Query("apellido") String apellido,
+                                    @Query("tel") String tel);
+
     //LOGGIN
 
     @POST("login")
@@ -31,3 +42,4 @@ public interface ApiServices {
 //si ponemos query en lugar de path agrega ?nombre="guillermo"
 
 
+//obtener y insertar ya los tenes listo de empleado

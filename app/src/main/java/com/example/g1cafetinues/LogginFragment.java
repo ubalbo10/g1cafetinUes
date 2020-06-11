@@ -59,14 +59,14 @@ public class LogginFragment extends Fragment {
         String user=usuario.getText().toString();
         String contra=pass.getText().toString();
 
-        Call<Trabajador> login= service.ObtenerLogin(user,contra);
-        login.enqueue(new Callback<Trabajador>() {
+      //  Call<Trabajador> login= service.ObtenerLogin(user,contra);
+       /* login.enqueue(new Callback<Trabajador>() {
             @Override
             public void onResponse(Call<Trabajador> call, Response<Trabajador> response) {
                 if(response.isSuccessful()){
                     Trabajador respuesta= response.body();
                     //crear una clase que guarde los datos del login para poder usar esos datos mas adelantes
-                    
+
                 }
             }
 
@@ -74,7 +74,7 @@ public class LogginFragment extends Fragment {
             public void onFailure(Call<Trabajador> call, Throwable t) {
 
             }
-        });
+        }); */
         btn_ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
