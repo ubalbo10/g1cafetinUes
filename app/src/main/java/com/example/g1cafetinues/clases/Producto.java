@@ -1,12 +1,16 @@
 package com.example.g1cafetinues.clases;
 
 public class Producto {
+    String idlocal;
+    String idproducto;
     String nombre;
     Float precioUnitario;
     Integer cantidad;
     Float total;
-    public Producto(String nombre,Float precioUnitario,Integer cantidad,Float total){
+    public Producto(String idlocal,String idproducto,String nombre,Float precioUnitario,Integer cantidad,Float total){
         this.nombre=nombre;
+        this.idlocal=idlocal;
+        this.idproducto=idproducto;
         this.precioUnitario=precioUnitario;
         this.cantidad=cantidad;
         this.total=total;

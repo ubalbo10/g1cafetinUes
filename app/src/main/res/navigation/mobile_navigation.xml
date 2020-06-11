@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/elegirProductosFragment2"
-        android:name="com.example.g1cafetinues.MantenimientoProductos.ElegirProductosFragment"
+        android:name="com.example.g1cafetinues.ElegirProductosFragment"
         android:label="fragment_elegir_productos"
         tools:layout="@layout/fragment_elegir_productos" >
         <action

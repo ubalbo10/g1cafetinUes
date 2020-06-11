@@ -1,8 +1,12 @@
 package com.example.g1cafetinues.interfaces;
 
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.Producto;
+import com.example.g1cafetinues.clases.ProductoApi;
 import com.example.g1cafetinues.clases.Trabajador;
+import com.example.g1cafetinues.clases.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,11 +31,15 @@ public interface ApiServices {
                                     @Query("nombre") String nombre,
                                     @Query("apellido") String apellido,
                                     @Query("tel") String tel);
+    //idlocal, idcategoria
+    @POST("obtener-productos")
+    Call<ArrayList<ProductoApi>> ObtenerProductosLocal(@Query("idlocal") String idlocal,
+                                                       @Query("idcategoria") String idcategoria);
 
     //LOGGIN
 
     @POST("login")
-    Call<Trabajador> ObtenerLogin(@Body String usuario,@Body String password);
+    Call<Usuario> ObtenerLogin(@Query("usuario") String usuario, @Query("password") String password);
 
 
 

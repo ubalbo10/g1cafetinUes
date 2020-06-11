@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.g1cafetinues.R;
@@ -37,7 +38,8 @@ public class ConsultarEmpleadoFragment extends Fragment {
     EditText mostrarApellido;
     EditText mostrarTel;
     Retrofit retrofit;
-
+    Button aceptar;
+    Button limpiar;
     public ConsultarEmpleadoFragment() {
         // Required empty public constructor
     }
@@ -50,7 +52,6 @@ public class ConsultarEmpleadoFragment extends Fragment {
                 .baseUrl(UrlApi.UrlBase)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        ApiServices service = retrofit.create(ApiServices.class);
 
         // Inflate the layout for this fragment
         View vista=inflater.inflate(R.layout.fragment_consultar_empleado, container, false);
@@ -62,30 +63,39 @@ public class ConsultarEmpleadoFragment extends Fragment {
         mostrarNombre=vista.findViewById(R.id.mostrarnombre_Empleado);
         mostrarApellido=vista.findViewById(R.id.mostrarApellido_Empleado);
         mostrarTel=vista.findViewById(R.id.mostrarTelefono_Empleado);
+        aceptar=vista.findViewById(R.id.botonConsultarTrabajador);
 
-        String idtrabajador=consultarID.getText().toString();
-        Call<Trabajador> trabajador=service.ObtenerTrabajador(idtrabajador);
-        trabajador.enqueue(new Callback<Trabajador>() {
+        aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<Trabajador> call, Response<Trabajador> response) {
-                if(response.isSuccessful()){
-                    Trabajador respuesta=response.body();
-                    mostrarID.setText(respuesta.getIDTRABAJADOR().toString());
-                    mostrarIDlocal.setText(respuesta.getIDLOCAL().toString());
-                    mostrarIDfacultad.setText(respuesta.getIDFACULTAD().toString());
-                    mostrarIDubicacion.setText(respuesta.getIDUBICACION().toString());
-                    mostrarNombre.setText(respuesta.getNOMTRABAJADOR().toString());
-                    mostrarApellido.setText(respuesta.getAPETRABAJADOR().toString());
-                    mostrarTel.setText(respuesta.getTELTRABAJADOR().toString());
-                   // mostrarID.setText(respuesta.getIDTRABAJADOR().toString());
-                }
-            }
+            public void onClick(View v) {
+                String idtrabajador=consultarID.getText().toString();
+                ApiServices service = retrofit.create(ApiServices.class);
 
-            @Override
-            public void onFailure(Call<Trabajador> call, Throwable t) {
+                Call<Trabajador> trabajador=service.ObtenerTrabajador(idtrabajador);
+                trabajador.enqueue(new Callback<Trabajador>() {
+                    @Override
+                    public void onResponse(Call<Trabajador> call, Response<Trabajador> response) {
+                        if(response.isSuccessful()){
+                            Trabajador respuesta=response.body();
+                            mostrarID.setText(respuesta.getIDTRABAJADOR().toString());
+                            mostrarIDlocal.setText(respuesta.getIDLOCAL().toString());
+                            mostrarIDfacultad.setText(respuesta.getIDFACULTAD().toString());
+                            mostrarIDubicacion.setText(respuesta.getIDUBICACION().toString());
+                            mostrarNombre.setText(respuesta.getNOMTRABAJADOR().toString());
+                            mostrarApellido.setText(respuesta.getAPETRABAJADOR().toString());
+                            mostrarTel.setText(respuesta.getTELTRABAJADOR().toString());
+                            // mostrarID.setText(respuesta.getIDTRABAJADOR().toString());
+                        }
+                    }
 
+                    @Override
+                    public void onFailure(Call<Trabajador> call, Throwable t) {
+
+                    }
+                });
             }
         });
+
 
 
         return vista;

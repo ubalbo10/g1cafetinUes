@@ -12,12 +12,14 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.g1cafetinues.R;
+import com.example.g1cafetinues.clases.ProductoApi;
 import com.example.g1cafetinues.interfaces.DatosFactura;
+import com.example.g1cafetinues.interfaces.DatosUsuarioActivo;
 
 import java.util.ArrayList;
 
 public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.MyViewHolder> {
-    private ArrayList<String> mDataset;
+    private ArrayList<ProductoApi> mDataset;
     DatosFactura listenerproductos;
 
     //manipulamos cada boton del item
@@ -28,12 +30,30 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
         public ImageView imagen;
         public Button add;
         public EditText cantidad;
+        public EditText Idproducto;
+
 
         public MyViewHolder(View v) {
             super(v);
+            this.Idproducto=v.findViewById(R.id.editidproducto);
             this.nombre=v.findViewById(R.id.textView_descripcion_producto);
             this.precio=v.findViewById(R.id.textView_precio_producto);
-            this.imagen=v.findViewById(R.id.foto_producto);
+            if(DatosUsuarioActivo.categoria=="otrosproductos"){
+                this.imagen=v.findViewById(R.id.foto_producto);
+                imagen.setImageResource(R.drawable.otros);
+            }
+            if(DatosUsuarioActivo.categoria=="bebidas"){
+                this.imagen=v.findViewById(R.id.foto_producto);
+                imagen.setImageResource(R.drawable.bebida);
+            }
+            if(DatosUsuarioActivo.categoria=="cafe"){
+                this.imagen=v.findViewById(R.id.foto_producto);
+                imagen.setImageResource(R.drawable.cafe);
+            }
+            if(DatosUsuarioActivo.categoria=="comida"){
+                this.imagen=v.findViewById(R.id.foto_producto);
+                imagen.setImageResource(R.drawable.comida);
+            }
             this.add=v.findViewById(R.id.add);
             this.cantidad=v.findViewById(R.id.editText_cantidad_producto);
 
@@ -41,7 +61,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public AdaptadorProductos(ArrayList<String> myDataset, DatosFactura listener) {
+    public AdaptadorProductos(ArrayList<ProductoApi> myDataset, DatosFactura listener) {
         this.listenerproductos=listener;
         mDataset = myDataset;
     }
@@ -65,10 +85,11 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        holder.nombre.setText(mDataset.get(position));
-        holder.precio.setText("12");
+        holder.nombre.setText(mDataset.get(position).getNOMBREPRODUCTO().toString());
+        holder.precio.setText(mDataset.get(position).getPRECIOUNITARIO().toString());
+        holder.Idproducto.setText(mDataset.get(position).getIDPRODUCTO().toString());
         //datos a enviar para crear detalle de factura
-        final String id="1";
+        //final String id="1";
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +99,8 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
                 Float precio=Float.parseFloat(holder.precio.getText().toString());
 
                 Integer cantidad=Integer.parseInt(cantidads);
-                listenerproductos.addDatos(nombre,precio,cantidad);
+                String idproducto=holder.Idproducto.getText().toString();
+                listenerproductos.addDatos(idproducto,nombre,precio,cantidad);
                 Toast.makeText(v.getContext(), "Producto agregado", Toast.LENGTH_SHORT).show();
             }
         });

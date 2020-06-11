@@ -29,7 +29,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_menu_manage" />
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/editIdProducto"/>
             <TextView
                 android:id="@+id/textView_descripcion_producto"
                 android:layout_width="wrap_content"

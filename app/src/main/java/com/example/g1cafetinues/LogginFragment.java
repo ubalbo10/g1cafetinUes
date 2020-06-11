@@ -14,7 +14,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.g1cafetinues.clases.Trabajador;
+import com.example.g1cafetinues.clases.Usuario;
 import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.DatosUsuarioActivo;
 import com.example.g1cafetinues.interfaces.UrlApi;
 
 import retrofit2.Call;
@@ -47,7 +49,7 @@ public class LogginFragment extends Fragment {
                 .baseUrl(UrlApi.UrlBase)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        ApiServices service = retrofit.create(ApiServices.class);
+
 
 
         View vista=inflater.inflate(R.layout.fragment_loggin, container, false);
@@ -59,28 +61,45 @@ public class LogginFragment extends Fragment {
         String user=usuario.getText().toString();
         String contra=pass.getText().toString();
 
-      //  Call<Trabajador> login= service.ObtenerLogin(user,contra);
-       /* login.enqueue(new Callback<Trabajador>() {
-            @Override
-            public void onResponse(Call<Trabajador> call, Response<Trabajador> response) {
-                if(response.isSuccessful()){
-                    Trabajador respuesta= response.body();
-                    //crear una clase que guarde los datos del login para poder usar esos datos mas adelantes
 
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Trabajador> call, Throwable t) {
-
-            }
-        }); */
         btn_ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                findNavController(v).navigate(R.id.irahome);
-                Toast.makeText(getActivity(), "boton presionado", Toast.LENGTH_SHORT).show();
-                Log.i("texto","si me ejecuto");
+            public void onClick(final View v) {
+
+                //Toast.makeText(getActivity(), "boton presionado", Toast.LENGTH_SHORT).show();
+                //Log.i("texto","si me ejecuto");
+                String user=usuario.getText().toString();
+                String contra=pass.getText().toString();
+                ApiServices service = retrofit.create(ApiServices.class);
+
+                Call<Usuario> login= service.ObtenerLogin(user,contra);
+                login.enqueue(new Callback<Usuario>() {
+                    @Override
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                        if(response.isSuccessful()){
+                            if(response.body().toString().isEmpty()){
+                             Toast.makeText(getActivity(),"usuario no registarado",Toast.LENGTH_LONG).show();
+                            }else {
+                                Usuario respuesta = response.body();
+                                //datos del usuario
+                                DatosUsuarioActivo.activo = 1;
+                                DatosUsuarioActivo.nombre = respuesta.getNOMUSUARIO();
+                                DatosUsuarioActivo.idtipo = respuesta.getIDTIPOUSUARIO().toString();
+                                DatosUsuarioActivo.idusuario = respuesta.getIDUSUARIO();
+                                Log.i("datos", DatosUsuarioActivo.nombre);
+                                Toast.makeText(getActivity(), "ingreso correcto", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), DatosUsuarioActivo.nombre, Toast.LENGTH_LONG).show();
+                                findNavController(v).navigate(R.id.irahome);
+                            }
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+                        Toast.makeText(getActivity(),"fallo de ws",Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
         btn_cerrar.setOnClickListener(new View.OnClickListener() {

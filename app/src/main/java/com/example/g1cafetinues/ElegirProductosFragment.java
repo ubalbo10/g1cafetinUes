@@ -1,4 +1,4 @@
-package com.example.g1cafetinues.MantenimientoProductos;
+package com.example.g1cafetinues;
 
 import android.os.Bundle;
 
@@ -17,11 +17,22 @@ import android.widget.Toast;
 import com.example.g1cafetinues.Adaptadores.AdaptadorProductos;
 import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.clases.Producto;
+import com.example.g1cafetinues.clases.ProductoApi;
+import com.example.g1cafetinues.clases.Usuario;
+import com.example.g1cafetinues.interfaces.ApiServices;
 import com.example.g1cafetinues.interfaces.DatosFactura;
+import com.example.g1cafetinues.interfaces.DatosUsuarioActivo;
 import com.example.g1cafetinues.interfaces.Facturas;
 import com.example.g1cafetinues.interfaces.LocalSeleccionado;
+import com.example.g1cafetinues.interfaces.UrlApi;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -35,6 +46,7 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
     RecyclerView recycler;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    Retrofit retrofit;
 
     //categoria
     ImageView bebidas;
@@ -43,7 +55,7 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
     ImageView otrosproductos;
 
     //simulando el arraylist
-    ArrayList<String> productos=new ArrayList<String>();
+    ArrayList<ProductoApi> productos=new ArrayList<ProductoApi>();
     //pantallas
     LinearLayout pantallaCategoria;
     LinearLayout pantallaProducto;
@@ -64,7 +76,7 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
                              Bundle savedInstanceState) {
         String idselecionado= LocalSeleccionado.Idlocal.toString();
         Toast.makeText(requireActivity(), idselecionado, Toast.LENGTH_SHORT).show();
-
+        /* datos quemados
         String producto1="COCA COLA 1.25LTS";
         String producto2="PEPSI 1.25LTS";
         String producto3="COCOA";
@@ -76,20 +88,17 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
         productos.add(producto4);
         productos.add(producto5);
         productos.add(producto1);
+        */
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         // Inflate the layout for this fragment
         View vista=inflater.inflate(R.layout.fragment_elegir_productos, container, false);
         irCategorias=vista.findViewById(R.id.button_verCategoria);
         aceptar=vista.findViewById(R.id.button_aceptar_productos);
-        //llamar recyclerview//
         recycler=vista.findViewById(R.id.Recycler_productos);
-        recycler.setHasFixedSize(true);
-        //grip es para poder ponerle columnas
-        //layoutManager= new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        layoutManager = new GridLayoutManager(getActivity(),2);
-        recycler.setLayoutManager(layoutManager);
-        mAdapter=new AdaptadorProductos(productos,this);
-        recycler.setAdapter(mAdapter);
-        //FIN DE RECYCLER//
 
         //visibilidad al entrar
         pantallaCategoria=vista.findViewById(R.id.pantalla_categoria);
@@ -111,6 +120,8 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
                 //jugar con las visibilidades
                 pantallaProducto.setVisibility(View.VISIBLE);
                 pantallaCategoria.setVisibility(View.GONE);
+                DatosUsuarioActivo.categoria="bebidas";
+                ConsultarProductos();
 
 
             }
@@ -124,7 +135,8 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
                 //jugar con las visibilidades
                 pantallaProducto.setVisibility(View.VISIBLE);
                 pantallaCategoria.setVisibility(View.GONE);
-
+                DatosUsuarioActivo.categoria="comida";
+                ConsultarProductos();
             }
         });
         cafe.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +148,8 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
                 //jugar con las visibilidades
                 pantallaProducto.setVisibility(View.VISIBLE);
                 pantallaCategoria.setVisibility(View.GONE);
-
+                DatosUsuarioActivo.categoria="cafe";
+                ConsultarProductos();
             }
         });
         otrosproductos.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +161,8 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
                 //jugar con las visibilidades
                 pantallaProducto.setVisibility(View.VISIBLE);
                 pantallaCategoria.setVisibility(View.GONE);
-
+                DatosUsuarioActivo.categoria="otrosproductos";
+                ConsultarProductos();
             }
         });
         irCategorias.setOnClickListener(new View.OnClickListener() {
@@ -185,10 +199,63 @@ public class ElegirProductosFragment extends Fragment implements DatosFactura {
 
 
     @Override
-    public void addDatos(String nombre, Float precio, Integer cantidad) {
-          Producto producto=new Producto(nombre,precio,cantidad,(precio*cantidad));
+    public void addDatos(String idproducto,String nombre, Float precio, Integer cantidad) {
+          Producto producto=new Producto(LocalSeleccionado.Idlocal.toString(),idproducto,nombre,precio,cantidad,(precio*cantidad));
 
           detalleFactura.add(producto);
             Facturas.detalleFactura=detalleFactura;
+    }
+    public void mostrarRecycler(){
+        //llamar recyclerview//
+
+        recycler.setHasFixedSize(true);
+        //grip es para poder ponerle columnas
+        //layoutManager= new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
+        layoutManager = new GridLayoutManager(getActivity(),2);
+        recycler.setLayoutManager(layoutManager);
+        mAdapter=new AdaptadorProductos(productos,this);
+        recycler.setAdapter(mAdapter);
+        //FIN DE RECYCLER//
+    }
+    public void ConsultarProductos(){
+        ApiServices service = retrofit.create(ApiServices.class);
+        Integer idcategoria=0;
+        switch(DatosUsuarioActivo.categoria) {
+            case "bebidas":
+                idcategoria=1;
+                // code block
+                break;
+            case "otrosproductos":
+                // code block
+                idcategoria=2;
+                break;
+            case "cafe":
+                // code block
+                idcategoria=3;
+                break;
+            case "comida":
+                // code block
+                idcategoria=4;
+                break;
+
+        }
+        Call<ArrayList<ProductoApi>> Productos= service.ObtenerProductosLocal(LocalSeleccionado.Idlocal.toString(),
+                idcategoria.toString());
+        Productos.enqueue(new Callback<ArrayList<ProductoApi>>() {
+            @Override
+            public void onResponse(Call<ArrayList<ProductoApi>> call, Response<ArrayList<ProductoApi>> response) {
+                if(response.isSuccessful()){
+                    productos=response.body();
+                    mostrarRecycler();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<ProductoApi>> call, Throwable t) {
+                Toast.makeText(getActivity(),"fallo ws",Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }

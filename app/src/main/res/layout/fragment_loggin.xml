@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cafe"
     tools:context=".LogginFragment">
 
     <Button
@@ -44,8 +45,8 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="98dp"
         android:layout_marginBottom="20dp"
-        android:hint="Usuario"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editText_pass"
         app:layout_constraintEnd_toEndOf="parent"
