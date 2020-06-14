@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center_vertical"
+        android:text="ID Encargado"
+        android:textAlignment="center"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/editText_eliminarEncargado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Ingrese ID Encargado"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/btn_eliminarEncargado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR" />
+</LinearLayout>

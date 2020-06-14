@@ -195,4 +195,38 @@
         android:name="com.example.g1cafetinues.MantenimientoEmpleados.ConsultarEmpleadoFragment"
         android:label="fragment_consultar_empleado"
         tools:layout="@layout/fragment_consultar_empleado" />
+    <fragment
+        android:id="@+id/mantenimimientoDetalleProductoPedidoFragment"
+        android:name="com.example.g1cafetinues.detalle_producto_pedido.MantenimientoDetalleProductoPedidoFragment"
+        android:label="Detalle - Producto - Pedido"
+        tools:layout="@layout/fragment_mantenimiento_detalle_producto_pedido" >
+        <action
+            android:id="@+id/action_mantenimimientoDetalleProductoPedidoFragment_to_actualizarDetalleProductoPedidoFragment"
+            app:destination="@id/actualizarDetalleProductoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimimientoDetalleProductoPedidoFragment_to_eliminarDetalleProductoPedidoFragment"
+            app:destination="@id/eliminarDetalleProductoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimimientoDetalleProductoPedidoFragment_to_consultarDetalleProductoPedidoFragment"
+            app:destination="@id/consultarDetalleProductoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimimientoDetalleProductoPedidoFragment_to_agregarDetalleProductoPedidoFragment"
+            app:destination="@id/agregarDetalleProductoPedidoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarDetalleProductoPedidoFragment"
+        android:name="com.example.g1cafetinues.detalle_producto_pedido.ActualizarDetalleProductoPedidoFragment"
+        android:label="ActualizarDetalleProductoPedidoFragment" />
+    <fragment
+        android:id="@+id/consultarDetalleProductoPedidoFragment"
+        android:name="com.example.g1cafetinues.detalle_producto_pedido.ConsultarDetalleProductoPedidoFragment"
+        android:label="ConsultarDetalleProductoPedidoFragment" />
+    <fragment
+        android:id="@+id/agregarDetalleProductoPedidoFragment"
+        android:name="com.example.g1cafetinues.detalle_producto_pedido.AgregarDetalleProductoPedidoFragment"
+        android:label="AgregarDetalleProductoPedidoFragment" />
+    <fragment
+        android:id="@+id/eliminarDetalleProductoPedidoFragment"
+        android:name="com.example.g1cafetinues.detalle_producto_pedido.EliminarDetalleProductoPedidoFragment"
+        android:label="EliminarDetalleProductoPedidoFragment" />
 </navigation>

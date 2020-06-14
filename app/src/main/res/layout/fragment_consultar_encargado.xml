@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_idEncargado"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID ENCARGADO"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/btn_buscarEncargdo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            android:text="BUSCAR" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="ID Encargado"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Nombre"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Apellido"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:text="Telefono"
+            android:layout_marginBottom="25dp"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText_buscarIdEncargado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:layout_marginBottom="122dp"
+            android:hint="Ingrese ID Encargado"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/textView_buscarIdEncargado"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat"/>
+
+        <TextView
+            android:id="@+id/textView_buscarNombre"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView_buscarapellido"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView_buscarTelefono"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+</LinearLayout>
