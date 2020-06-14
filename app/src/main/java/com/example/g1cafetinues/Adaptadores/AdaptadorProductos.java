@@ -35,7 +35,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
 
         public MyViewHolder(View v) {
             super(v);
-            this.Idproducto=v.findViewById(R.id.editidproducto);
+            this.Idproducto=v.findViewById(R.id.editarIdProducto);
             this.nombre=v.findViewById(R.id.textView_descripcion_producto);
             this.precio=v.findViewById(R.id.textView_precio_producto);
             if(DatosUsuarioActivo.categoria=="otrosproductos"){
