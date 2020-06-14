@@ -11,7 +11,7 @@ public class Local {
     @SerializedName("IDENCARGADOLOCAL")
     @Expose
     private Integer IDENCARGADOLOCAL;
-    @SerializedName("NOMBRE")
+    @SerializedName("NOMBRELOCAL")
     @Expose
     private String NOMBRE;
     @SerializedName("DIRECCION")
