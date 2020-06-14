@@ -3,6 +3,9 @@ package com.example.g1cafetinues.interfaces;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.ProductoApi;
+import com.example.g1cafetinues.clases.Trabajador;
+import com.example.g1cafetinues.clases.Usuario;
 import com.google.gson.internal.bind.JsonTreeReader;
 
 import java.util.ArrayList;
