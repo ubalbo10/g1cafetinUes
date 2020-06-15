@@ -18,13 +18,38 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiServices {
-    //obtener todos los locales
-    @GET("locales")
-    Call<List<Local>> ObtenerLocales();
+
+    //CRUD DE PRODUCTOS
+    //Crear producto
+    @POST("registrar-producto")
+    Call<String> RegistrarProducto(@Query("IDPRODUCTO") String idproducto,
+                                   @Query("IDLOCAL") String idlocal,
+                                   @Query("IDCATEGORIA") String idcategoria,
+                                   @Query("NOMBREPRODUCTO") String nombre,
+                                   @Query("PRECIOUNITARIO") String precio,
+                                   @Query("EXISTENCIA") String Existencia,
+                                   @Query("PRO_LOCAL") String Prolocal);
+
+    @POST("actualizar-producto")
+    Call<String> UpdateProducto(@Query("IDPRODUCTO") String idproducto,
+                                @Query("IDLOCAL") String idlocal,
+                                @Query("IDCATEGORIA") String idcategoria,
+                                @Query("NOMBREPRODUCTO") String nombre,
+                                @Query("PRECIOUNITARIO") String precio,
+                                @Query("EXISTENCIA") String Existencia,
+                                @Query("PRO_LOCAL") String Prolocal);
+
+    @POST("obtener-productos-crud")
+    Call<ProductoApi> ConsultarProducto(@Query("IDPRODUCTO") String idproducto);
+    @POST("eliminar-producto")
+    Call<String> BorrarProducto(@Query("IDPRODUCTO") String idproducto);
+    //FIN DE CRUD DE PRODUCTOS
+
+    //CRUD DE EMPLEADOS
     //obtener empleado
     @POST("obtener-empleado")
     Call<Trabajador> ObtenerTrabajador(@Query("Idtrabajador") String idtrabajador);
-    //crear empleado
+        //crear empleado
     @POST("registrar-empleado-ues")
     Call<String> RegistrarEmpleado(@Query("idTrabajador") String idTrabajador,
                                     @Query("IdLocal") String idLocal,
@@ -33,17 +58,34 @@ public interface ApiServices {
                                     @Query("nombre") String nombre,
                                     @Query("apellido") String apellido,
                                     @Query("tel") String tel);
+    //Update empleado
+    @POST("actualizar-empleado")
+    Call<String> updateEmpleado(@Query("IDTRABAJADOR") String idtrabajador,
+                                @Query("IDLOCAL") String IDLOCAL,
+                                @Query("IDUBICACION") String IDUBICACION,
+                                @Query("IDFACULTAD") String IDFACULTAD,
+                                @Query("NOMTRABAJADOR") String NOMBRE,
+                                @Query("APETRABAJADOR") String apellido,
+                                @Query("TELTRABAJADOR") String tel);
+
+    //delete empleado
+    @POST("eliminar-empleado")
+    Call<String> EliminarEmpleado(@Query("IDTRABAJADOR") String idtrabajador);
+    //fin del crud de empleados
+
+
+    //para el flujo normal
     //idlocal, idcategoria
     @POST("obtener-productos")
     Call<ArrayList<ProductoApi>> ObtenerProductosLocal(@Query("idlocal") String idlocal,
                                                        @Query("idcategoria") String idcategoria);
-
     //LOGGIN
-
     @POST("login")
     Call<Usuario> ObtenerLogin(@Query("usuario") String usuario, @Query("password") String password);
 
-
+    //obtener todos los locales
+    @GET("locales")
+    Call<List<Local>> ObtenerLocales();
 
 
     //Metodos para detalle producto pedido

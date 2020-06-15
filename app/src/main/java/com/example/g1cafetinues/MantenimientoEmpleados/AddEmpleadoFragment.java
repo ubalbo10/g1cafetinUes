@@ -94,10 +94,10 @@ public class AddEmpleadoFragment extends Fragment {
                             Log.i("respuesta",respuesta);
                             if(respuesta=="1"){
                                 Toast.makeText(getActivity(),"empleado registrado",Toast.LENGTH_LONG).show();
-                            }
-                            if(respuesta=="0"){
+                            }else{
                                 Toast.makeText(getActivity(),"no registrado verifique los datos",Toast.LENGTH_LONG).show();
                             }
+
                         }
                     }
 

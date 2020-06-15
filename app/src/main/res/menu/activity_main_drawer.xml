@@ -21,7 +21,7 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Pedido" />
         <item
-            android:id="@+id/mantenimientodetaFragment"
+            android:id="@+id/mantenimientoEmpleadoFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Empleados" />
         <item
