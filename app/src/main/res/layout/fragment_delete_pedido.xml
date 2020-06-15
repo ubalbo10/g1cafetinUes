@@ -1,14 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DeletePedidoFragment">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".DeletePedidoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<TextView
+    android:id="@+id/tvLlevarR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.575"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvClienteR"
+    app:layout_constraintVertical_bias="0.14" />
 
-</FrameLayout>
+<TextView
+    android:id="@+id/tvClienteR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.577"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.693" />
+
+<TextView
+    android:id="@+id/tvFechaR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.577"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.62" />
+
+<TextView
+    android:id="@+id/tvUbicacionR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.575"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.539" />
+
+<TextView
+    android:id="@+id/tvRepartidorR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.577"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.476" />
+
+<TextView
+    android:id="@+id/tvTrabajadorR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.575"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.41" />
+
+<TextView
+    android:id="@+id/tvEstadoR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.577"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.331" />
+
+<TextView
+    android:id="@+id/tvId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Id pedido:"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.206"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.179" />
+
+<TextView
+    android:id="@+id/tvTitulo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Crear pedido"
+    android:visibility="invisible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.085" />
+
+<TextView
+    android:id="@+id/tvRuta"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ruta"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.188"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.258" />
+
+<TextView
+    android:id="@+id/tvTrabajador"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:text="Trabajador"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.209"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvEstado"
+    app:layout_constraintVertical_bias="0.0" />
+
+<TextView
+    android:id="@+id/tvRepartidor"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:text="Repartidor"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.208"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvTrabajador"
+    app:layout_constraintVertical_bias="0.0" />
+
+<TextView
+    android:id="@+id/tvUbicacion"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ubicación"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.206"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.54" />
+
+<TextView
+    android:id="@+id/tvCliente"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="208dp"
+    android:text="Cliente"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.187"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvFecha"
+    app:layout_constraintVertical_bias="0.767" />
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnLimpiar"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLlevar"
+        app:layout_constraintVertical_bias="0.0" />
+
+<TextView
+    android:id="@+id/tvLlevar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="¿Para llevar?"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.204"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.759" />
+
+<TextView
+    android:id="@+id/tvFecha"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:text="Fecha pedido"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.22"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvUbicacion"
+    app:layout_constraintVertical_bias="0.007" />
+
+<TextView
+    android:id="@+id/tvEstado"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:text="Estado pedido"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.224"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvRutaR"
+    app:layout_constraintVertical_bias="0.002" />
+
+<Button
+    android:id="@+id/btnLimpiar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="84dp"
+    android:text="Limpiar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvLlevarR"
+    app:layout_constraintVertical_bias="0.325" />
+
+<EditText
+    android:id="@+id/etPedido"
+    android:layout_width="168dp"
+    android:layout_height="46dp"
+    android:ems="10"
+    android:hint="Id del pedido"
+    android:inputType="number"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.835"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.169" />
+
+<TextView
+    android:id="@+id/tvRutaR"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.575"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.258" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

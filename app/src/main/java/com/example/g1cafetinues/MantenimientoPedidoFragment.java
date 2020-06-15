@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import static androidx.navigation.Navigation.findNavController;
 
 
 /**
@@ -19,6 +22,12 @@ public class MantenimientoPedidoFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    Button btnAgregar;
+    Button btnConsultar;
+    Button btnActualizar;
+    Button btnEliminar;
+    View vista;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +68,40 @@ public class MantenimientoPedidoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mantenimiento_pedido, container, false);
+        View vista=inflater.inflate(R.layout.fragment_mantenimiento_pedido, container, false);
+        btnAgregar=vista.findViewById(R.id.btnAgregar);
+        btnConsultar=vista.findViewById(R.id.btnConsultar);
+        btnActualizar=vista.findViewById(R.id.btnActualizar);
+        btnEliminar=vista.findViewById(R.id.btnEliminar);
+
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                findNavController(v).navigate(R.id.action_mantenimientoPedidoFragment_to_crearPedidoFragment);
+            }
+        });
+        btnConsultar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                findNavController(v).navigate(R.id.action_mantenimientoPedidoFragment_to_consultarPedidoFragment);
+            }
+        });
+        btnActualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                findNavController(v).navigate(R.id.action_mantenimientoPedidoFragment_to_updatePedidoFragment);
+            }
+        });
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                findNavController(v).navigate(R.id.action_mantenimientoPedidoFragment_to_deletePedidoFragment);
+            }
+        });
+        return vista;
     }
 }

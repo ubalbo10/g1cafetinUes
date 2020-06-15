@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MantenimientoPedidoFragment">
+    android:orientation="vertical"
+    tools:context=".MantenimientoPedidoFragment"
+    android:padding="20dp"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    >
+
+    <Button
+        android:id="@+id/btnAgregar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Agregar pedido"
+        android:layout_marginTop = "100dp"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnConsultar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar pedido"
+        android:layout_marginTop = "15dp"/>
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar pedido"
+        android:layout_marginTop = "15dp"/>
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar pedido"
+        android:layout_marginTop = "15dp"/>
+
+</LinearLayout>
