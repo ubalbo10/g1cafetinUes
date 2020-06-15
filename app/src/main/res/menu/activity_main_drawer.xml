@@ -37,9 +37,14 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Local" />
         <item
+            android:id="@+id/mantenimientoRepartidorFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Repartidor"/>
+        <item
             android:id="@+id/matenimientoFacultadFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Facultad"/>
+
     </group>
 
     <item android:title="Communicate">

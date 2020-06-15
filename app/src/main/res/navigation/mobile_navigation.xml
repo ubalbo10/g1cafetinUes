@@ -334,4 +334,41 @@
         android:name="com.example.g1cafetinues.MatenimientoFacultad.EliminarFacultadFragment"
         android:label="fragment_eliminar_facultad"
         tools:layout="@layout/fragment_eliminar_facultad" />
+    <fragment
+        android:id="@+id/mantenimientoRepartidorFragment"
+        android:name="com.example.g1cafetinues.MantenimientoRepartidor.MantenimientoRepartidorFragment"
+        android:label="MantenimientoRepartidorFragment" >
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_actualizarRepartidorFragment"
+            app:destination="@id/actualizarRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_agregarRepartidorFragment"
+            app:destination="@id/agregarRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_eliminarRepartidorFragment"
+            app:destination="@id/eliminarRepartidorFragment" />
+        <action
+            android:id="@+id/action_mantenimientoRepartidorFragment_to_consultarRepartidorFragment"
+            app:destination="@id/consultarRepartidorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarRepartidorFragment"
+        android:name="com.example.g1cafetinues.MantenimientoRepartidor.ActualizarRepartidorFragment"
+        android:label="fragment_actualizar_repartidor"
+        tools:layout="@layout/fragment_actualizar_repartidor" />
+    <fragment
+        android:id="@+id/agregarRepartidorFragment"
+        android:name="com.example.g1cafetinues.MantenimientoRepartidor.AgregarRepartidorFragment"
+        android:label="fragment_agregar_repartidor"
+        tools:layout="@layout/fragment_agregar_repartidor" />
+    <fragment
+        android:id="@+id/consultarRepartidorFragment"
+        android:name="com.example.g1cafetinues.MantenimientoRepartidor.ConsultarRepartidorFragment"
+        android:label="fragment_consultar_repartidor"
+        tools:layout="@layout/fragment_consultar_repartidor" />
+    <fragment
+        android:id="@+id/eliminarRepartidorFragment"
+        android:name="com.example.g1cafetinues.MantenimientoRepartidor.EliminarRepartidorFragment"
+        android:label="fragment_eliminar_repartidor"
+        tools:layout="@layout/fragment_eliminar_repartidor" />
 </navigation>

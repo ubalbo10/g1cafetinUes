@@ -4,6 +4,7 @@ import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Facultad;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.Repartidor;
 import com.example.g1cafetinues.clases.TLocal;
 import com.google.gson.internal.bind.JsonTreeReader;
 
@@ -92,8 +93,27 @@ public interface ApiServices {
 
     @POST("facultad")
     Call<String> eliminarFacultad(@Query("IDFACULTAD") Integer idFacultad);
-}
 
+
+    //////////////////////Metodo CRUD REPARTIDOR////////////////////////////////////////
+    @POST("repartidor")
+    Call<List<Repartidor>> obtenerRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
+
+    @POST("repartidor")
+    Call<String> agregarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
+                                   @Query("NOMBREREPARTIDOR") String nombre,
+                                   @Query("APEREPARTIDOR") String apellido,
+                                   @Query("TELREPARTIDOR") Integer telefono);
+
+    @POST("repartidor")
+    Call<String> actualizarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
+                                      @Query("NOMBREREPARTIDOR") String nombre,
+                                      @Query("APEREPARTIDOR") String apellido,
+                                      @Query("TELREPARTIDOR") Integer telefono);
+
+    @POST("repartidor")
+    Call<String> eliminarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
+}
 
 //group/{id}/users    Call<List<User>> groupList(@Path("id") int groupId);
 //si ponemos query en lugar de path agrega ?nombre="guillermo"
