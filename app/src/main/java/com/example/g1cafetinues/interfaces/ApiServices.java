@@ -2,7 +2,9 @@ package com.example.g1cafetinues.interfaces;
 
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
+import com.example.g1cafetinues.clases.Facultad;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.TLocal;
 import com.google.gson.internal.bind.JsonTreeReader;
 
 import java.util.List;
@@ -39,23 +41,57 @@ public interface ApiServices {
 
 
     //////////////////////Metodos para Encargado////////////////////////////////////////
-    @POST("encargado/")
+    @POST("obtener-encargado-local")
     Call<List<Encargado>> obtenerEncargado(@Query("IDENCARGADO") Integer idEncargado);
 
-    @POST("encargado/")
+    @POST("registrar-encargado-local")
     Call<Encargado> agregarEncargado(@Query("IDENCARGADO") Integer idEncargado,
                                      @Query("NOMBRE") String nombre,
                                      @Query("APELLIDO") String apellido,
                                      @Query("TELEFONO") Integer telefono);
 
-    @POST("encargado/")
+    @POST("actualizar-encargado-local")
     Call<Encargado> actualizarEncargado(@Query("IDENCARGADO") Integer idEncargado,
                                         @Query("NOMBRE") String nombre,
                                         @Query("APELLIDO") String apellido,
                                         @Query("TELEFONO") Integer telefono);
 
-    @POST("encargado")
+    @POST("eliminar-encargado-local")
     Call<List<DetalleProductoPedido>> eliminarEncargado(@Query("IDENCARGADO") Integer idEncargado);
+
+
+    //////////////////////Metodos para CRUD LOCAL/////////////////////////////
+    @POST("obtener-local")
+    Call<List<TLocal>> obtenerLocal(@Query("IDLOCAL") Integer idLocal);
+
+    @POST("registrar-local")
+    Call<String> agregarLocal(@Query("IDLOCAL") Integer idLocal,
+                              @Query("IDENCARGADOLOCAL") Integer idEncargado,
+                              @Query("NOMBRELOCAL") String nombreLocal);
+
+    @POST("actualizar-local")
+    Call<String> actualizarLocal(@Query("IDLOCAL") Integer idLocal,
+                                 @Query("IDENCARGADOLOCAL") Integer idEncargado,
+                                 @Query("NOMBRELOCAL") String nombreLocal);
+
+    @POST("eliminar-local")
+    Call<String> eliminarLocal(@Query("IDLOCAL") Integer idLocal);
+
+
+    //////////////////////Metodos para CRUD FACULTAD/////////////////////////////
+    @POST("facultad")
+    Call<List<Facultad>> obtenerFacultad(@Query("IDFACULTAD") Integer idFacultad);
+
+    @POST("facultad")
+    Call<String> agregarFacultad(@Query("IDFACULTAD") Integer idFacultad,
+                              @Query("NOMFACULTAD") String nombreFacultad);
+
+    @POST("facultad")
+    Call<String> actualizarFacultad(@Query("IDFACULTAD") Integer idFacultad,
+                                 @Query("NOMFACULTAD") String nombreFacultad);
+
+    @POST("facultad")
+    Call<String> eliminarFacultad(@Query("IDFACULTAD") Integer idFacultad);
 }
 
 

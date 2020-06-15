@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.logginFragment, R.id.homeClienteFragment,
                 R.id.mantenimientoProductosFragment, R.id.mantenimientoCategoriasFragment, R.id.homeClienteFragment,
-                R.id.mantenimientoPedidoFragment,R.id.mantenimientoEmpleadoFragment, R.id.nav_share, R.id.nav_send,R.id.mantenimimientoDetalleProductoPedidoFragment)
+                R.id.mantenimientoPedidoFragment,R.id.mantenimientoEmpleadoFragment, R.id.nav_share,
+                R.id.nav_send,R.id.mantenimimientoDetalleProductoPedidoFragment,R.id.mantenimientoEncargadoFragment,
+                R.id.mantenimientoLocalFragment,R.id.matenimientoFacultadFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

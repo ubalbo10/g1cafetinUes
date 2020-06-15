@@ -28,6 +28,18 @@
             android:id="@+id/mantenimimientoDetalleProductoPedidoFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Detalle Producto Pedido" />
+        <item
+            android:id="@+id/mantenimientoEncargadoFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Encargado" />
+        <item
+            android:id="@+id/mantenimientoLocalFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Local" />
+        <item
+            android:id="@+id/matenimientoFacultadFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Facultad"/>
     </group>
 
     <item android:title="Communicate">

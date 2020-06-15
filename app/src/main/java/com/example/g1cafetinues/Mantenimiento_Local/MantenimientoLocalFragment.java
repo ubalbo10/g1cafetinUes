@@ -1,4 +1,4 @@
-package com.example.g1cafetinues.Mantenimiento_Encargado;
+package com.example.g1cafetinues.Mantenimiento_Local;
 
 import android.os.Bundle;
 
@@ -16,13 +16,13 @@ import static androidx.navigation.Navigation.findNavController;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MantenimientoEncargadoFragment extends Fragment {
+public class MantenimientoLocalFragment extends Fragment {
     Button add;
     Button delete;
     Button update;
     Button query;
 
-    public MantenimientoEncargadoFragment() {
+    public MantenimientoLocalFragment() {
         // Required empty public constructor
     }
 
@@ -31,25 +31,26 @@ public class MantenimientoEncargadoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista=inflater.inflate(R.layout.fragment_mantenimiento_encargado, container, false);;
 
-        add=vista.findViewById(R.id.btn_AgregarEncargado);
-        delete=vista.findViewById(R.id.btn_EliminarEncargado);
-        update=vista.findViewById(R.id.btn_ConsultarEncargado);
-        query=vista.findViewById(R.id.btn_EliminarEncargado);
+        View vista=inflater.inflate(R.layout.fragment_mantenimiento_local, container, false);
+
+        add=vista.findViewById(R.id.btn_AgregarLocal);
+        delete=vista.findViewById(R.id.btn_eliminaLocal);
+        update=vista.findViewById(R.id.btn_actualizarLocal);
+        query=vista.findViewById(R.id.btn_consultarLocal);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                findNavController(v).navigate(R.id.action_mantenimientoEncargadoFragment_to_agregarEncargadoFragment);
+                findNavController(v).navigate(R.id.action_mantenimientoLocalFragment_to_agregarLocalFragment);
             }
         });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                findNavController(v).navigate(R.id.action_mantenimientoEncargadoFragment_to_actualizarEncargadoFragment);
+                findNavController(v).navigate(R.id.action_mantenimientoLocalFragment_to_actualizarLocalFragment);
             }
         });
         delete.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +64,7 @@ public class MantenimientoEncargadoFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                findNavController(v).navigate(R.id.action_mantenimientoEncargadoFragment_to_consultarEncargadoFragment);
+                findNavController(v).navigate(R.id.action_mantenimientoLocalFragment_to_consultarLocalFragment);
             }
         });
 

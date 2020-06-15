@@ -229,4 +229,109 @@
         android:id="@+id/eliminarDetalleProductoPedidoFragment"
         android:name="com.example.g1cafetinues.detalle_producto_pedido.EliminarDetalleProductoPedidoFragment"
         android:label="EliminarDetalleProductoPedidoFragment" />
+    <fragment
+        android:id="@+id/mantenimientoEncargadoFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Encargado.MantenimientoEncargadoFragment"
+        android:label="fragment_mantenimiento_encargado"
+        tools:layout="@layout/fragment_mantenimiento_encargado" >
+        <action
+            android:id="@+id/action_mantenimientoEncargadoFragment_to_eliminarEncargadoFragment"
+            app:destination="@id/eliminarEncargadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEncargadoFragment_to_consultarEncargadoFragment"
+            app:destination="@id/consultarEncargadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEncargadoFragment_to_agregarEncargadoFragment"
+            app:destination="@id/agregarEncargadoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEncargadoFragment_to_actualizarEncargadoFragment"
+            app:destination="@id/actualizarEncargadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarEncargadoFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Encargado.ActualizarEncargadoFragment"
+        android:label="ActualizarEncargadoFragment" />
+    <fragment
+        android:id="@+id/agregarEncargadoFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Encargado.AgregarEncargadoFragment"
+        android:label="AgregarEncargadoFragment" />
+    <fragment
+        android:id="@+id/consultarEncargadoFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Encargado.ConsultarEncargadoFragment"
+        android:label="ConsultarEncargadoFragment" />
+    <fragment
+        android:id="@+id/eliminarEncargadoFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Encargado.EliminarEncargadoFragment"
+        android:label="EliminarEncargadoFragment" />
+    <fragment
+        android:id="@+id/mantenimientoLocalFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Local.MantenimientoLocalFragment"
+        android:label="fragment_mantenimiento_local"
+        tools:layout="@layout/fragment_mantenimiento_local" >
+        <action
+            android:id="@+id/action_mantenimientoLocalFragment_to_eliminarLocalFragment"
+            app:destination="@id/eliminarLocalFragment" />
+        <action
+            android:id="@+id/action_mantenimientoLocalFragment_to_consultarLocalFragment"
+            app:destination="@id/consultarLocalFragment" />
+        <action
+            android:id="@+id/action_mantenimientoLocalFragment_to_agregarLocalFragment"
+            app:destination="@id/agregarLocalFragment" />
+        <action
+            android:id="@+id/action_mantenimientoLocalFragment_to_actualizarLocalFragment"
+            app:destination="@id/actualizarLocalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarLocalFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Local.ActualizarLocalFragment"
+        android:label="ActualizarLocalFragment" />
+    <fragment
+        android:id="@+id/agregarLocalFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Local.AgregarLocalFragment"
+        android:label="AgregarLocalFragment" />
+    <fragment
+        android:id="@+id/consultarLocalFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Local.ConsultarLocalFragment"
+        android:label="ConsultarLocalFragment" />
+    <fragment
+        android:id="@+id/eliminarLocalFragment"
+        android:name="com.example.g1cafetinues.Mantenimiento_Local.EliminarLocalFragment"
+        android:label="EliminarLocalFragment" />
+    <fragment
+        android:id="@+id/matenimientoFacultadFragment"
+        android:name="com.example.g1cafetinues.MatenimientoFacultad.MatenimientoFacultadFragment"
+        android:label="MatenimientoFacultadFragment" >
+        <action
+            android:id="@+id/action_matenimientoFacultadFragment_to_consultarFacultadFragment"
+            app:destination="@id/consultarFacultadFragment" />
+        <action
+            android:id="@+id/action_matenimientoFacultadFragment_to_agregarFacultadFragment"
+            app:destination="@id/agregarFacultadFragment" />
+        <action
+            android:id="@+id/action_matenimientoFacultadFragment_to_eliminarFacultadFragment"
+            app:destination="@id/eliminarFacultadFragment" />
+        <action
+            android:id="@+id/action_matenimientoFacultadFragment_to_actualizarFacultadFragment"
+            app:destination="@id/actualizarFacultadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarFacultadFragment"
+        android:name="com.example.g1cafetinues.MatenimientoFacultad.ActualizarFacultadFragment"
+        android:label="fragment_actualizar_facultad"
+        tools:layout="@layout/fragment_actualizar_facultad" />
+    <fragment
+        android:id="@+id/consultarFacultadFragment"
+        android:name="com.example.g1cafetinues.MatenimientoFacultad.ConsultarFacultadFragment"
+        android:label="fragment_consultar_facultad"
+        tools:layout="@layout/fragment_consultar_facultad" />
+    <fragment
+        android:id="@+id/agregarFacultadFragment"
+        android:name="com.example.g1cafetinues.MatenimientoFacultad.AgregarFacultadFragment"
+        android:label="fragment_agregar_facultad"
+        tools:layout="@layout/fragment_agregar_facultad" />
+    <fragment
+        android:id="@+id/eliminarFacultadFragment"
+        android:name="com.example.g1cafetinues.MatenimientoFacultad.EliminarFacultadFragment"
+        android:label="fragment_eliminar_facultad"
+        tools:layout="@layout/fragment_eliminar_facultad" />
 </navigation>
