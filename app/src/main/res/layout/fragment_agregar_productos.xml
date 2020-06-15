@@ -17,7 +17,7 @@
         <TextView android:text="IdProducto"/>
         <EditText
             android:id="@+id/editidproducto"
-            android:inputType="number"
+
             android:maxLength="10" />
     </TableRow>
     <TableRow>
@@ -39,21 +39,21 @@
         <EditText
             android:id="@+id/editNombreproducto"
             android:inputType="text"
-            android:maxLength="1" />
+            android:maxLength="30" />
     </TableRow>
     <TableRow>
         <TextView android:text="Precio" />
         <EditText
             android:id="@+id/editPrecioUnitario"
-            android:inputType="text"
-            android:maxLength="1" />
+            android:inputType="numberDecimal"
+            android:maxLength="30" />
     </TableRow>
     <TableRow>
         <TextView android:text="Cantidad" />
         <EditText
             android:id="@+id/editMCantidadProducto"
-            android:inputType="text"
-            android:maxLength="1" />
+            android:inputType="number"
+            android:maxLength="30" />
     </TableRow>
 
 
@@ -68,13 +68,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Limpiar" />
+            android:text="Aceptar" />
 
         <Button
             android:id="@+id/button_limpiar_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Aceptar" />
+            android:text="Limpiar" />
     </LinearLayout>
 </TableLayout>

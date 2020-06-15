@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:hint="Ingrese el id del producto a eliminar"
         android:inputType="text"
+        android:id="@+id/borrarproductoid"
         />
     <Button
         android:layout_width="match_parent"

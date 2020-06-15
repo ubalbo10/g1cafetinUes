@@ -17,7 +17,7 @@
         <TextView android:text="IdProducto"/>
         <EditText
             android:id="@+id/editActIdproducto"
-            android:inputType="number"
+
             android:maxLength="10" />
     </TableRow>
     <TableRow>
@@ -27,27 +27,34 @@
             android:inputType="text"
             android:maxLength="30" />
     </TableRow>
+    <TableRow>
+        <TextView android:text="IdLocal" />
+        <EditText
+            android:id="@+id/editActidlocal"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
 
     <TableRow>
         <TextView android:text="Nombre" />
         <EditText
             android:id="@+id/editActNombreproducto"
             android:inputType="text"
-            android:maxLength="1" />
+            android:maxLength="30" />
     </TableRow>
     <TableRow>
         <TextView android:text="Precio" />
         <EditText
             android:id="@+id/editActPrecioUnitario"
-            android:inputType="text"
-            android:maxLength="1" />
+            android:inputType="numberDecimal"
+            android:maxLength="30" />
     </TableRow>
     <TableRow>
         <TextView android:text="Existencia" />
         <EditText
             android:id="@+id/editactExistencia"
-            android:inputType="text"
-            android:maxLength="1" />
+            android:inputType="number"
+            android:maxLength="40" />
     </TableRow>
 
 
@@ -62,13 +69,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Limpiar" />
+            android:text="Aceptar" />
 
         <Button
             android:id="@+id/button_limpiar_actpro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Aceptar" />
+            android:text="Limpiar" />
     </LinearLayout>
 </TableLayout>
