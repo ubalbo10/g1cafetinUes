@@ -7,8 +7,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
+import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.UrlApi;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -21,6 +32,9 @@ public class DeleteCategoriaFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    EditText id;
+    Button aceptar;
+    Retrofit retrofit;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,7 +74,42 @@ public class DeleteCategoriaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delete_categoria, container, false);
+        View vista=inflater.inflate(R.layout.fragment_delete_categoria, container, false);
+        id=vista.findViewById(R.id.edit_IdborrarCategoria);
+        aceptar=vista.findViewById(R.id.Button_BorrarCategoria);
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiServices service = retrofit.create(ApiServices.class);
+
+
+                service.EliminarCategoria(id.getText().toString()).
+                        enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                             if (response.isSuccessful()){
+                                 String respuesta=response.body();
+                                 if(respuesta=="1"){
+                                     Toast.makeText(requireActivity(),"Categoria borrada",Toast.LENGTH_LONG).show();
+                                 }else {
+                                     Toast.makeText(requireActivity(),"Categoria no borrada",Toast.LENGTH_LONG).show();
+                                 }
+                             }
+                            }
+
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
+                                Toast.makeText(requireActivity(),"Error ws",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+            }
+        });
+        return vista;
     }
 }

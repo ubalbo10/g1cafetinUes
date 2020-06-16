@@ -1,5 +1,6 @@
 package com.example.g1cafetinues.interfaces;
 
+import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Local;
@@ -18,6 +19,28 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiServices {
+
+
+    //crud de categoria
+    //crear categoria
+    @POST("registrar-categoria")
+    Call<String> RegistrarCategoria(@Query("IDCATEGORIA") String idcategoria,
+                                    @Query("NOMBRECATEGORIA") String nombre);
+    //ACTUALIZAR
+    @POST("actualizar-categoria")
+    Call<String> ActualizarCategoria(@Query("IDCATEGORIA") String idcategoria,
+                                    @Query("NOMBRECATEGORIA") String nombre);
+    //CONSULTAR
+    @POST("obtener-categoria")
+    Call<Categoria> ObtenerCategoria(@Query("IDCATEGORIA") String idcategoria);
+    //borrar
+    @POST("eliminar-categoria")
+    Call<String> EliminarCategoria(@Query("IDCATEGORIA") String idcategoria);
+    //fin//
+
+
+
+
 
     //CRUD DE PRODUCTOS
     //Crear producto

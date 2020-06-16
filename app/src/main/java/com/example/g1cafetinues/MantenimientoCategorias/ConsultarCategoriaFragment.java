@@ -7,8 +7,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
+import com.example.g1cafetinues.clases.Categoria;
+import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.UrlApi;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -25,6 +37,12 @@ public class ConsultarCategoriaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    EditText idconsultar;
+    EditText mostrarid;
+    EditText mostrarnombre;
+    Button consultar;
+    Button limpiar;
+    Retrofit retrofit;
 
     public ConsultarCategoriaFragment() {
         // Required empty public constructor
@@ -61,6 +79,43 @@ public class ConsultarCategoriaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consultar_categoria, container, false);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        View vista=inflater.inflate(R.layout.fragment_consultar_categoria, container, false);
+        idconsultar=vista.findViewById(R.id.editConsultaIdCategoria);
+        mostrarid=vista.findViewById(R.id.mostraridcategoria);
+        mostrarnombre=vista.findViewById(R.id.mostraNombreCategoria);
+        consultar=vista.findViewById(R.id.botonConsultarcategoria);
+        consultar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiServices service = retrofit.create(ApiServices.class);
+
+
+                service.ObtenerCategoria(idconsultar.getText().toString()).
+                        enqueue(new Callback<Categoria>() {
+                            @Override
+                            public void onResponse(Call<Categoria> call, Response<Categoria> response) {
+                            if(response.isSuccessful()){
+                              Categoria respuesta=response.body();
+                              mostrarid.setText(respuesta.getIDCATEGORIA().toString());
+                              mostrarnombre.setText(respuesta.getNOMBRECATEGORIA().toString());
+                                Toast.makeText(getActivity(),"exito",Toast.LENGTH_LONG).show();
+                             }else {
+                                Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG).show();
+                            }
+                            }
+
+                            @Override
+                            public void onFailure(Call<Categoria> call, Throwable t) {
+                                Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+            }
+        });
+        return vista;
     }
 }
