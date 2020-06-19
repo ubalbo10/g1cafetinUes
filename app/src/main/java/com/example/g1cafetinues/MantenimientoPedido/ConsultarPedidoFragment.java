@@ -7,8 +7,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
+import com.example.g1cafetinues.clases.Pedido;
+import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.UrlApi;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -25,6 +37,14 @@ public class ConsultarPedidoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    EditText idpedido;
+    EditText mostrarid;
+    EditText mostrarestado;
+    EditText mostrarnombre;
+    EditText mostrarfecha;
+    Retrofit retrofit;
+    Button aceptar;
+    Button limpiar;
 
     public ConsultarPedidoFragment() {
         // Required empty public constructor
@@ -61,6 +81,47 @@ public class ConsultarPedidoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consultar_pedido, container, false);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        View vista=inflater.inflate(R.layout.fragment_consultar_pedido, container, false);
+        idpedido=vista.findViewById(R.id.editConsultaIdPedido);
+        mostrarestado=vista.findViewById(R.id.mostratestado);
+        mostrarfecha=vista.findViewById(R.id.mostrarfecha);
+        mostrarid=vista.findViewById(R.id.mostraridpedido);
+        mostrarnombre=vista.findViewById(R.id.mostrarnombre);
+        aceptar=vista.findViewById(R.id.botonConsultarpedido);
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiServices service = retrofit.create(ApiServices.class);
+
+
+                service.ObtenerPedido(idpedido.getText().toString()).
+                        enqueue(new Callback<Pedido>() {
+                            @Override
+                            public void onResponse(Call<Pedido> call, Response<Pedido> response) {
+                            if(response.isSuccessful()){
+                                Pedido Respuesta=response.body();
+                                mostrarestado.setText(Respuesta.getIDESTADOPEDIDO());
+                                mostrarfecha.setText(Respuesta.getFECHAPEDIDO());
+                                mostrarid.setText(Respuesta.getIDPEDIDO());
+                                mostrarnombre.setText(Respuesta.getCLIENTE());
+                            }else{
+                                Toast.makeText(getActivity(), "revise los datos", Toast.LENGTH_SHORT).show();
+                            }
+                            }
+
+                            @Override
+                            public void onFailure(Call<Pedido> call, Throwable t) {
+                                Toast.makeText(getActivity(), "Fallo WS", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+            }
+        });
+        return vista;
     }
 }

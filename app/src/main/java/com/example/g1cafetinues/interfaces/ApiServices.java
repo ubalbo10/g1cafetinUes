@@ -4,6 +4,7 @@ import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.Pedido;
 import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.clases.ProductoApi;
 import com.example.g1cafetinues.clases.Trabajador;
@@ -28,6 +29,35 @@ public interface ApiServices {
                               @Query("fechaPedido") String fecha,
                               @Query("nombreCliente") String nombrecliente,
                               @Query("detalle") ArrayList<String> detalle);
+    //crud pedido
+    @POST("actualizar-pedido")
+    Call<String> ActualizarPedido(@Query("IDPEDIDO") String idpedido,
+                               @Query("IDRUTA") String idruta,
+                               @Query("IDESTADOPEDIDO") Integer idestado,
+                               @Query("IDTRABAJADOR") String idtrabajador,
+                               @Query("IDREPARTIDOR") String idrepartidor,
+                               @Query("IDUBICACION") String idubicacion,
+                               @Query("FECHAPEDIDO") String fecha,
+                               @Query("CLIENTE") String cliente,
+                               @Query("PARALLEVAR") Integer parallevar);
+
+    @POST("registrar-pedido")
+    Call<String> RegistrarPedido(@Query("IDPEDIDO") String idpedido,
+                               @Query("IDRUTA") String idruta,
+                               @Query("IDESTADOPEDIDO") String idestado,
+                               @Query("IDTRABAJADOR") String idtrabajador,
+                               @Query("IDREPARTIDOR") String idrepartidor,
+                               @Query("IDUBICACION") String idubicacion,
+                               @Query("FECHAPEDIDO") String fecha,
+                               @Query("CLIENTE") String cliente,
+                               @Query("PARALLEVAR") Integer parallevar);//CONSULTAR
+    @POST("obtener-pedido")
+    Call<Pedido> ObtenerPedido(@Query("IDPEDIDO") String idpedido);
+    //borrar
+    @POST("eliminar-pedido")
+    Call<String> EliminarPedido(@Query("IDPEDIDO") String idpedido);
+
+
     //crud de categoria
     //crear categoria
     @POST("registrar-categoria")
