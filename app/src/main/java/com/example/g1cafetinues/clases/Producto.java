@@ -27,5 +27,8 @@ public class Producto {
     public Float getTotal(){
         return this.total;
     }
+    public String getIdProducto(){
+        return this.idproducto;
+    }
 
 }

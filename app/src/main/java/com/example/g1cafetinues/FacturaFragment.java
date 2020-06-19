@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.example.g1cafetinues.interfaces.Factura;
 import com.example.g1cafetinues.interfaces.Facturas;
 import com.example.g1cafetinues.interfaces.UrlApi;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import retrofit2.Call;
@@ -131,13 +133,13 @@ public class FacturaFragment extends Fragment  {
             @Override
             public void onClick(View v) {
              // aqui debemos de guardar la factura
-                String llevar="no";
+                Integer llevar=0;
                 String ubicacion="0";
                 if(si.isChecked()){
-                    llevar="si";
+                    llevar=1;
                     ubicacion=idubicacion.getText().toString();
                 }else{
-                    llevar="no";
+                    llevar=0;
                     ubicacion="0";
                 }
                 java.util.Date fecha = new Date();
@@ -146,7 +148,14 @@ public class FacturaFragment extends Fragment  {
 
                 ApiServices service = retrofit.create(ApiServices.class);
 
-                service.GuardarPedido(idfactura.getText().toString(),llevar,ubicacion,fechaact,nombre.getText().toString(), Facturas.detalleFactura).
+                ArrayList<String> listadetalle=new ArrayList<String>();
+                for(int i=0; i<Facturas.detalleFactura.size(); i++){
+                    listadetalle.add(Facturas.detalleFactura.get(i).getCantidad().toString()+","+Facturas.detalleFactura.get(i).getIdProducto().toString());
+
+                }
+                Log.i("verobjeto",listadetalle.get(0).toString());
+
+                service.GuardarPedido(idfactura.getText().toString(),llevar,ubicacion,fechaact,nombre.getText().toString(), listadetalle).
                         enqueue(new Callback<String>() {
                                     @Override
                                     public void onResponse(Call<String> call, Response<String> response) {

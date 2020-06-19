@@ -23,11 +23,11 @@ public interface ApiServices {
 
     @POST("registrar-pedido-flujo")
     Call<String>GuardarPedido(@Query("idPedido") String id,
-                              @Query("esParaLlevar") String esparallevar,
+                              @Query("esParaLlevar") Integer esparallevar,
                               @Query("idUbicacion") String idUbicacion,
                               @Query("fechaPedido") String fecha,
                               @Query("nombreCliente") String nombrecliente,
-                              @Query("detalle") ArrayList<Producto> detalle);
+                              @Query("detalle") ArrayList<String> detalle);
     //crud de categoria
     //crear categoria
     @POST("registrar-categoria")
