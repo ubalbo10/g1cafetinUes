@@ -4,6 +4,7 @@ import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.clases.ProductoApi;
 import com.example.g1cafetinues.clases.Trabajador;
 import com.example.g1cafetinues.clases.Usuario;
@@ -20,7 +21,13 @@ import retrofit2.http.Query;
 
 public interface ApiServices {
 
-
+    @POST("registrar-pedido-flujo")
+    Call<String>GuardarPedido(@Query("idPedido") String id,
+                              @Query("esParaLlevar") String esparallevar,
+                              @Query("idUbicacion") String idUbicacion,
+                              @Query("fechaPedido") String fecha,
+                              @Query("nombreCliente") String nombrecliente,
+                              @Query("detalle") ArrayList<Producto> detalle);
     //crud de categoria
     //crear categoria
     @POST("registrar-categoria")

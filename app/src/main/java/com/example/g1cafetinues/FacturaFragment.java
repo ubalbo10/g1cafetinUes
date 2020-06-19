@@ -10,11 +10,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.g1cafetinues.Adaptadores.AdaptadorFactura;
+import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.DatosFactura;
+import com.example.g1cafetinues.interfaces.Factura;
 import com.example.g1cafetinues.interfaces.Facturas;
+import com.example.g1cafetinues.interfaces.UrlApi;
+
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -35,8 +49,14 @@ public class FacturaFragment extends Fragment  {
     private String mParam2;
     RecyclerView recycler;
     TextView totalfactura;
+    EditText nombre;
+    EditText idubicacion;
+    RadioButton si;
+    EditText idfactura;
+    RadioButton no;
     Button aceptar;
     Button cancelar;
+    Retrofit retrofit;
 
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -66,6 +86,11 @@ public class FacturaFragment extends Fragment  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -79,7 +104,11 @@ public class FacturaFragment extends Fragment  {
         // Inflate the layout for this fragment
         Toast.makeText(getActivity(), tamano.toString(),Toast.LENGTH_LONG).show();
         View vista=inflater.inflate(R.layout.fragment_factura, container, false);
-
+        nombre=vista.findViewById(R.id.edit_setNombrecliente);
+        idubicacion=vista.findViewById(R.id.edit_ubicacion);
+        si=vista.findViewById(R.id.llevarCierto);
+        no=vista.findViewById(R.id.llevarFalso);
+        idfactura=vista.findViewById(R.id.editidfactura);
         recycler=vista.findViewById(R.id.recycler_factura);
         recycler.setHasFixedSize(true);
         //grip es para poder ponerle columnas
@@ -102,7 +131,45 @@ public class FacturaFragment extends Fragment  {
             @Override
             public void onClick(View v) {
              // aqui debemos de guardar la factura
-                Toast.makeText(getActivity(), "Pedido guardado con exito", Toast.LENGTH_SHORT).show();
+                String llevar="no";
+                String ubicacion="0";
+                if(si.isChecked()){
+                    llevar="si";
+                    ubicacion=idubicacion.getText().toString();
+                }else{
+                    llevar="no";
+                    ubicacion="0";
+                }
+                java.util.Date fecha = new Date();
+                String fechaact=fecha.toString();
+
+
+                ApiServices service = retrofit.create(ApiServices.class);
+
+                service.GuardarPedido(idfactura.getText().toString(),llevar,ubicacion,fechaact,nombre.getText().toString(), Facturas.detalleFactura).
+                        enqueue(new Callback<String>() {
+                                    @Override
+                                    public void onResponse(Call<String> call, Response<String> response) {
+                                        if(response.isSuccessful()){
+                                            String respuesta=response.body();
+                                            if(respuesta=="1"){
+                                                Toast.makeText(requireActivity(), "Factura guardada", Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                Toast.makeText(requireActivity(), "Factura No guardada", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }else {
+                                            Toast.makeText(requireActivity(), "Factura No guardada", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<String> call, Throwable t) {
+                                        Toast.makeText(requireActivity(), "Factura No guardada fallo ws", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+
+               // Toast.makeText(getActivity(), "Pedido guardado con exito", Toast.LENGTH_SHORT).show();
                 findNavController(v).navigate(R.id.action_facturaFragment_to_homeClienteFragment);
 
             }
