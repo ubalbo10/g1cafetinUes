@@ -1,5 +1,6 @@
 package com.example.g1cafetinues.interfaces;
 
+import com.example.g1cafetinues.clases.CambioPrecio;
 import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
@@ -14,13 +15,11 @@ import com.example.g1cafetinues.clases.TLocal;
 import com.example.g1cafetinues.clases.Trabajador;
 import com.example.g1cafetinues.clases.Ubicacion;
 import com.example.g1cafetinues.clases.Usuario;
-import com.google.gson.internal.bind.JsonTreeReader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -210,6 +209,117 @@ public interface ApiServices {
 
     @POST("encargado")
     Call<List<DetalleProductoPedido>> eliminarEncargado(@Query("IDENCARGADO") Integer idEncargado);
+
+    //////////////////////Metodo CRUD CAMBIO PRECIO////////////////////////////////////////
+    @POST("obtener-cambio-precio")
+    Call<List<CambioPrecio>> obtenerCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio);
+
+    @POST("registrar-cambio-precio")
+    Call<String> agregarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio,
+                                     @Query("IDPRODUCTO") Integer idProducto,
+                                     @Query("FECHACAMBIO") String fechaCambio,
+                                     @Query("PRECIONUEVO") Double precioNuevo);
+
+    @POST("actualizar-cambio-precio")
+    Call<String> actualizarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio,
+                                        @Query("IDPRODUCTO") Integer idProducto,
+                                        @Query("FECHACAMBIO") String fechaCambio,
+                                        @Query("PRECIONUEVO") Double precioNuevo);
+
+    @POST("eliminar-cambio-precio")
+    Call<String> eliminarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio);
+
+    //VERIFICAR DESDE AQUI
+    
+    //////////////////////Metodos para CRUD LOCAL/////////////////////////////
+    @POST("obtener-local")
+    Call<List<TLocal>> obtenerLocal(@Query("IDLOCAL") Integer idLocal);
+
+    @POST("registrar-local")
+    Call<String> agregarLocal(@Query("IDLOCAL") Integer idLocal,
+                              @Query("IDENCARGADOLOCAL") Integer idEncargado,
+                              @Query("NOMBRELOCAL") String nombreLocal);
+
+    @POST("actualizar-local")
+    Call<String> actualizarLocal(@Query("IDLOCAL") Integer idLocal,
+                                 @Query("IDENCARGADOLOCAL") Integer idEncargado,
+                                 @Query("NOMBRELOCAL") String nombreLocal);
+
+    @POST("eliminar-local")
+    Call<String> eliminarLocal(@Query("IDLOCAL") Integer idLocal);
+
+
+    //////////////////////Metodos para CRUD FACULTAD/////////////////////////////
+    @POST("obtener-facultad")
+    Call<List<Facultad>> obtenerFacultad(@Query("IDFACULTAD") Integer idFacultad);
+
+    @POST("registrar-facultad")
+    Call<String> agregarFacultad(@Query("IDFACULTAD") Integer idFacultad,
+                                 @Query("NOMFACULTAD") String nombreFacultad);
+
+    @POST("actualizar-facultad")
+    Call<String> actualizarFacultad(@Query("IDFACULTAD") Integer idFacultad,
+                                    @Query("NOMFACULTAD") String nombreFacultad);
+
+    @POST("eliminar-facultad")
+    Call<String> eliminarFacultad(@Query("IDFACULTAD") Integer idFacultad);
+
+
+    //////////////////////Metodo CRUD REPARTIDOR////////////////////////////////////////
+    @POST("obtener-repartidor")
+    Call<List<Repartidor>> obtenerRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
+
+    @POST("registrar-repartido")
+    Call<String> agregarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
+                                   @Query("NOMREPARTIDOR") String nombre,
+                                   @Query("APEREPARTIDOR") String apellido,
+                                   @Query("TELREPARTIDOR") Integer telefono);
+
+    @POST("actualizar-repartidor")
+    Call<String> actualizarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
+                                      @Query("NOMREPARTIDOR") String nombre,
+                                      @Query("APEREPARTIDOR") String apellido,
+                                      @Query("TELREPARTIDOR") Integer telefono);
+
+    @POST("eliminar-repartidor")
+    Call<String> eliminarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
+
+
+
+    //////////////////////Metodo CRUD ESTADO PEDIDO////////////////////////////////////////
+    @POST("obtener-estado-pedido")
+    Call<List<EstadoPedido>> obtenerEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
+
+    @POST("registrar-estado-pedido")
+    Call<String> agregarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
+                                     @Query("DESCESTADOPEDIDO") String desEstadoPedido);
+
+    @POST("actualizar-estado-pedido")
+    Call<String> actualizarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
+                                        @Query("DESCESTADOPEDIDO") String desEstadoPedido);
+
+    @POST("eliminar-estado-pedido")
+    Call<String> eliminarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
+
+
+
+
+    //////////////////////Metodo CRUD UBICACION////////////////////////////////////////
+    @POST("obtener-ubicacion")
+    Call<List<Ubicacion>> obtenerUbicacion(@Query("IDUBICACION") Integer idUbicacion);
+
+    @POST("registrar-ubicacion")
+    Call<String> agregarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
+                                  @Query("DESCUBICACION") String desUbicacion);
+
+    @POST("actualizar-ubicacion")
+    Call<String> actualizarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
+                                     @Query("DESCUBICACION") String desUbicacion);
+
+    @POST("eliminar-ubicacion")
+    Call<String> eliminarUbicacion(@Query("IDUBICACION") Integer idUbicacion);
+
+
 }
 
 

@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.clases.CambioPrecio;
-import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.interfaces.ApiServices;
 import com.example.g1cafetinues.interfaces.UrlApi;
 
@@ -26,8 +25,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import static java.lang.Double.parseDouble;
 
 /**
  * A simple {@link Fragment} subclass.
