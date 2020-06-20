@@ -371,4 +371,118 @@
         android:name="com.example.g1cafetinues.MantenimientoRepartidor.EliminarRepartidorFragment"
         android:label="fragment_eliminar_repartidor"
         tools:layout="@layout/fragment_eliminar_repartidor" />
+    <fragment
+        android:id="@+id/actualizarEstadoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEstadoPedido.ActualizarEstadoPedidoFragment"
+        android:label="fragment_actualizar_estado_pedido"
+        tools:layout="@layout/fragment_actualizar_estado_pedido" />
+    <fragment
+        android:id="@+id/agregarEstadoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEstadoPedido.AgregarEstadoPedidoFragment"
+        android:label="fragment_agregar_estado_pedido"
+        tools:layout="@layout/fragment_agregar_estado_pedido" />
+    <fragment
+        android:id="@+id/consultarEstadoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEstadoPedido.ConsultarEstadoPedidoFragment"
+        android:label="fragment_consultar_estado_pedido"
+        tools:layout="@layout/fragment_consultar_estado_pedido" />
+    <fragment
+        android:id="@+id/eliminarEstadoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEstadoPedido.EliminarEstadoPedidoFragment"
+        android:label="fragment_eliminar_estado_pedido"
+        tools:layout="@layout/fragment_eliminar_estado_pedido" />
+    <fragment
+        android:id="@+id/mantenimientoEstadoPedidoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoEstadoPedido.MantenimientoEstadoPedidoFragment"
+        android:label="fragment_mantenimiento_estado_pedido"
+        tools:layout="@layout/fragment_mantenimiento_estado_pedido" >
+        <action
+            android:id="@+id/action_mantenimientoEstadoPedidoFragment_to_eliminarEstadoPedidoFragment"
+            app:destination="@id/eliminarEstadoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEstadoPedidoFragment_to_consultarEstadoPedidoFragment"
+            app:destination="@id/consultarEstadoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEstadoPedidoFragment_to_agregarEstadoPedidoFragment"
+            app:destination="@id/agregarEstadoPedidoFragment" />
+        <action
+            android:id="@+id/action_mantenimientoEstadoPedidoFragment2_to_actualizarEstadoPedidoFragment"
+            app:destination="@id/actualizarEstadoPedidoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarUbicacionFragment"
+        android:name="com.example.g1cafetinues.MantenimientoUbicacion.ActualizarUbicacionFragment"
+        android:label="fragment_actualizar_ubicacion"
+        tools:layout="@layout/fragment_actualizar_ubicacion" />
+    <fragment
+        android:id="@+id/agregarUbicacionFragment"
+        android:name="com.example.g1cafetinues.MantenimientoUbicacion.AgregarUbicacionFragment"
+        android:label="fragment_agregar_ubicacion"
+        tools:layout="@layout/fragment_agregar_ubicacion" />
+    <fragment
+        android:id="@+id/consultarUbicacionFragment"
+        android:name="com.example.g1cafetinues.MantenimientoUbicacion.ConsultarUbicacionFragment"
+        android:label="fragment_consultar_ubicacion"
+        tools:layout="@layout/fragment_consultar_ubicacion" />
+    <fragment
+        android:id="@+id/eliminarUbicacionFragment"
+        android:name="com.example.g1cafetinues.MantenimientoUbicacion.EliminarUbicacionFragment"
+        android:label="fragment_eliminar_ubicacion"
+        tools:layout="@layout/fragment_eliminar_ubicacion" />
+    <fragment
+        android:id="@+id/mantenimientoUbicacionFragment"
+        android:name="com.example.g1cafetinues.MantenimientoUbicacion.MantenimientoUbicacionFragment"
+        android:label="fragment_mantenimiento_ubicacion"
+        tools:layout="@layout/fragment_mantenimiento_ubicacion" >
+        <action
+            android:id="@+id/action_mantenimientoUbicacionFragment_to_eliminarUbicacionFragment"
+            app:destination="@id/eliminarUbicacionFragment" />
+        <action
+            android:id="@+id/action_mantenimientoUbicacionFragment_to_consultarUbicacionFragment"
+            app:destination="@id/consultarUbicacionFragment" />
+        <action
+            android:id="@+id/action_mantenimientoUbicacionFragment_to_agregarUbicacionFragment"
+            app:destination="@id/agregarUbicacionFragment" />
+        <action
+            android:id="@+id/action_mantenimientoUbicacionFragment_to_actualizarUbicacionFragment"
+            app:destination="@id/actualizarUbicacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarCambioPrecioFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCambioPrecio.ActualizarCambioPrecioFragment"
+        android:label="fragment_actualizar_cambio_precio"
+        tools:layout="@layout/fragment_actualizar_cambio_precio" />
+    <fragment
+        android:id="@+id/agregarCambioPrecioFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCambioPrecio.AgregarCambioPrecioFragment"
+        android:label="fragment_agregar_cambio_precio"
+        tools:layout="@layout/fragment_agregar_cambio_precio" />
+    <fragment
+        android:id="@+id/consultarCambioPrecioFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCambioPrecio.ConsultarCambioPrecioFragment"
+        android:label="fragment_consultar_cambio_precio"
+        tools:layout="@layout/fragment_consultar_cambio_precio" />
+    <fragment
+        android:id="@+id/eliminarCambioPrecioFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCambioPrecio.EliminarCambioPrecioFragment"
+        android:label="fragment_eliminar_cambio_precio"
+        tools:layout="@layout/fragment_eliminar_cambio_precio" />
+    <fragment
+        android:id="@+id/mantenimientoCambioPrecioFragment"
+        android:name="com.example.g1cafetinues.MantenimientoCambioPrecio.MantenimientoCambioPrecioFragment"
+        android:label="fragment_mantenimiento_cambio_precio"
+        tools:layout="@layout/fragment_mantenimiento_cambio_precio" >
+        <action
+            android:id="@+id/action_mantenimientoCambioPrecioFragment_to_actualizarCambioPrecioFragment"
+            app:destination="@id/actualizarCambioPrecioFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCambioPrecioFragment_to_eliminarCambioPrecioFragment"
+            app:destination="@id/eliminarCambioPrecioFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCambioPrecioFragment_to_consultarCambioPrecioFragment"
+            app:destination="@id/consultarCambioPrecioFragment" />
+        <action
+            android:id="@+id/action_mantenimientoCambioPrecioFragment_to_agregarCambioPrecioFragment"
+            app:destination="@id/agregarCambioPrecioFragment" />
+    </fragment>
 </navigation>

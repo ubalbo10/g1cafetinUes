@@ -1,11 +1,14 @@
 package com.example.g1cafetinues.interfaces;
 
+import com.example.g1cafetinues.clases.CambioPrecio;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
+import com.example.g1cafetinues.clases.EstadoPedido;
 import com.example.g1cafetinues.clases.Facultad;
 import com.example.g1cafetinues.clases.Local;
 import com.example.g1cafetinues.clases.Repartidor;
 import com.example.g1cafetinues.clases.TLocal;
+import com.example.g1cafetinues.clases.Ubicacion;
 import com.google.gson.internal.bind.JsonTreeReader;
 
 import java.util.List;
@@ -113,6 +116,63 @@ public interface ApiServices {
 
     @POST("repartidor")
     Call<String> eliminarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
+
+
+
+    //////////////////////Metodo CRUD ESTADO PEDIDO////////////////////////////////////////
+    @POST("ESTADO PEDIDO")
+    Call<List<EstadoPedido>> obtenerEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
+
+    @POST("ESTADO PEDIDO")
+    Call<String> agregarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
+                                     @Query("DESCESTADOPEDIDO") String desEstadoPedido);
+
+    @POST("ESTADO PEDIDO")
+    Call<String> actualizarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
+                                      @Query("DESCESTADOPEDIDO") String desEstadoPedido);
+
+    @POST("ESTADO PEDIDO")
+    Call<String> eliminarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
+
+
+
+
+    //////////////////////Metodo CRUD UBICACION////////////////////////////////////////
+    @POST("UBICACION")
+    Call<List<Ubicacion>> obtenerUbicacion(@Query("IDUBICACION") Integer idUbicacion);
+
+    @POST("UBICACION")
+    Call<String> agregarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
+                                     @Query("DESCUBICACION") String desUbicacion);
+
+    @POST("UBICACION")
+    Call<String> actualizarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
+                                     @Query("DESCUBICACION") String desUbicacion);
+
+    @POST("UBICACION")
+    Call<String> eliminarUbicacion(@Query("IDUBICACION") Integer idUbicacion);
+
+
+
+    //////////////////////Metodo CRUD CAMBIO PRECIO////////////////////////////////////////
+    @POST("obtener-cambio-precio")
+    Call<List<CambioPrecio>> obtenerCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio);
+
+    @POST("registrar-cambio-precio")
+    Call<String> agregarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio,
+                                     @Query("IDPRODUCTO") Integer idProducto,
+                                     @Query("FECHACAMBIO") String fechaCambio,
+                                     @Query("PRECIONUEVO") Double precioNuevo);
+
+    @POST("actualizar-cambio-precio")
+    Call<String> actualizarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio,
+                                        @Query("IDPRODUCTO") Integer idProducto,
+                                        @Query("FECHACAMBIO") String fechaCambio,
+                                        @Query("PRECIONUEVO") Double precioNuevo);
+
+    @POST("eliminar-cambio-precio")
+    Call<String> eliminarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio);
+
 }
 
 //group/{id}/users    Call<List<User>> groupList(@Path("id") int groupId);

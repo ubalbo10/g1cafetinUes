@@ -44,7 +44,19 @@
             android:id="@+id/matenimientoFacultadFragment"
             android:icon="@drawable/ic_menu_manage"
             android:title="Facultad"/>
-
+        <item
+            android:id="@+id/mantenimientoEstadoPedidoFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Estado Pedido"/>
+        <item
+            android:id="@+id/mantenimientoUbicacionFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Ubicacion"/>
+        <item
+            android:id="@+id/mantenimientoCambioPrecioFragment"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Cambiar Precio"/>
+        
     </group>
 
     <item android:title="Communicate">

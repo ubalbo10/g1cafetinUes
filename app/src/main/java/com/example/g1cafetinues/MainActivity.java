@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.mantenimientoProductosFragment, R.id.mantenimientoCategoriasFragment, R.id.homeClienteFragment,
                 R.id.mantenimientoPedidoFragment,R.id.mantenimientoEmpleadoFragment, R.id.nav_share,
                 R.id.nav_send,R.id.mantenimimientoDetalleProductoPedidoFragment,R.id.mantenimientoEncargadoFragment,
-                R.id.mantenimientoLocalFragment,R.id.matenimientoFacultadFragment,R.id.mantenimientoRepartidorFragment)
+                R.id.mantenimientoLocalFragment,R.id.matenimientoFacultadFragment,R.id.mantenimientoRepartidorFragment,
+                R.id.mantenimientoEstadoPedidoFragment,R.id.mantenimientoUbicacionFragment,R.id.mantenimientoCambioPrecioFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

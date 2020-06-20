@@ -13,16 +13,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txt_idEncargado"
+            android:id="@+id/txt_buscarActualizarEncargado"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:gravity="center_vertical"
+            android:text="ID Estado Pedido"
             android:textAlignment="center"
-            android:text="ID ENCARGADO"
             tools:ignore="RtlCompat" />
 
         <Button
-            android:id="@+id/btn_buscarCambioPrecio"
+            android:id="@+id/btn_buscarEstadoPedido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="75dp"
@@ -32,42 +32,27 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            android:text="ID Encargado"
             android:layout_marginBottom="25dp"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
             android:gravity="center_vertical"
+            android:text="ID Estado Pedido"
             android:textAlignment="center"
-            android:text="Nombre"
-            android:layout_marginBottom="25dp"
             tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            android:text="Apellido"
             android:layout_marginBottom="25dp"
+            android:gravity="center_vertical"
+            android:text="Estado Pedido"
+            android:textAlignment="center"
             tools:ignore="RtlCompat" />
 
-        <TextView
-            android:id="@+id/textView13"
+        <Button
+            android:id="@+id/btn_actualizarAceptar"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            android:text="Telefono"
-            android:layout_marginBottom="25dp"
-            tools:ignore="RtlCompat" />
-
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR" />
     </LinearLayout>
 
     <LinearLayout
@@ -78,50 +63,41 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText_buscarIdEncargado"
+            android:id="@+id/editText_buscarIdEstadoPedido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="122dp"
             android:ems="10"
             android:gravity="start|top"
-            android:layout_marginBottom="122dp"
-            android:hint="Ingrese ID Encargado"
-            android:inputType="textMultiLine" />
+            android:hint="ID Estado Pedido"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/textView_buscarIdEncargado"
+        <EditText
+            android:id="@+id/editText_actulizarIdEstadoPedido"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            tools:ignore="RtlCompat"/>
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="ID Estado Pedido"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/textView_buscarNombre"
+        <EditText
+            android:id="@+id/editText_actualizarDescEstadoPedido"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            tools:ignore="RtlCompat" />
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Ingrese Estado Pedido"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/textView_buscarapellido"
+        <Button
+            android:id="@+id/btn_actualizarCancelar"
             android:layout_width="match_parent"
-            android:layout_marginBottom="25dp"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:id="@+id/textView_buscarTelefono"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="25dp"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:textAlignment="center"
-            tools:ignore="RtlCompat" />
-
+            android:layout_height="wrap_content"
+            android:text="CANCELAR" />
     </LinearLayout>
 </LinearLayout>
