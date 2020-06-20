@@ -91,10 +91,11 @@ public class CrearPedidoFragment extends Fragment {
         // Inflate the layout for this fragment
         View vista=inflater.inflate(R.layout.fragment_crear_pedido, container, false);
         idpedido=vista.findViewById(R.id.editidpedido);
-        idubicacion=vista.findViewById(R.id.editIdUbicacion);
+        idubicacion=vista.findViewById(R.id.editidubicacioncrearpedido);
         idestado=vista.findViewById(R.id.editIdestado);
         idrepartidor=vista.findViewById(R.id.editidrepartirdor);
         idtrabajador=vista.findViewById(R.id.editidtrabajadorcrearpedido);
+        idruta=vista.findViewById(R.id.editidruta);
         cliente=vista.findViewById(R.id.editclientepedido);
         parallevar=vista.findViewById(R.id.editllevar);
         aceptar=vista.findViewById(R.id.button_aceptar_agregar);
@@ -105,9 +106,14 @@ public class CrearPedidoFragment extends Fragment {
             public void onClick(View v) {
                 ApiServices service = retrofit.create(ApiServices.class);
                 service.RegistrarPedido(idpedido.getText().toString(),
-                        idruta.getText().toString(),idestado.getText().toString(),
-                        idtrabajador.getText().toString(),idrepartidor.getText().toString(),
-                        idubicacion.getText().toString(),fechaa,cliente.getText().toString(),Integer.parseInt(parallevar.getText().toString())).
+                        idruta.getText().toString(),
+                        idestado.getText().toString(),
+                        idtrabajador.getText().toString(),
+                        idrepartidor.getText().toString(),
+                        idubicacion.getText().toString(),
+                        fechaa,
+                        cliente.getText().toString(),
+                        Integer.parseInt(parallevar.getText().toString())).
                         enqueue(new Callback<String>() {
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {

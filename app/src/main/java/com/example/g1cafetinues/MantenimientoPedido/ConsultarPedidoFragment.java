@@ -105,10 +105,10 @@ public class ConsultarPedidoFragment extends Fragment {
                             public void onResponse(Call<Pedido> call, Response<Pedido> response) {
                             if(response.isSuccessful()){
                                 Pedido Respuesta=response.body();
-                                mostrarestado.setText(Respuesta.getIDESTADOPEDIDO());
-                                mostrarfecha.setText(Respuesta.getFECHAPEDIDO());
-                                mostrarid.setText(Respuesta.getIDPEDIDO());
-                                mostrarnombre.setText(Respuesta.getCLIENTE());
+                                mostrarestado.setText(Respuesta.getIDESTADOPEDIDO().toString());
+                                mostrarfecha.setText(Respuesta.getFECHAPEDIDO().toString());
+                                mostrarid.setText(Respuesta.getIDPEDIDO().toString());
+                                mostrarnombre.setText(Respuesta.getCLIENTE().toString());
                             }else{
                                 Toast.makeText(getActivity(), "revise los datos", Toast.LENGTH_SHORT).show();
                             }

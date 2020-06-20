@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MantenimientoPedido.MantenimientoPedidoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/button_add_pedido"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="agregar pedido" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button_Update_pedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Actualizar pedido" />
+
+    <Button
+        android:id="@+id/button_consultar_pedido"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar pedido" />
+
+    <Button
+        android:id="@+id/button_eliminar_pedido"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar pedido" />
+</LinearLayout>

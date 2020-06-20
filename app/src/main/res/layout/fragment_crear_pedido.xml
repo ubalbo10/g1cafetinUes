@@ -59,7 +59,7 @@
         <TextView android:text="Cliente" />
         <EditText
             android:id="@+id/editclientepedido"
-            android:inputType="number"
+            android:inputType="text"
             android:maxLength="30" />
     </TableRow>
     <TableRow>

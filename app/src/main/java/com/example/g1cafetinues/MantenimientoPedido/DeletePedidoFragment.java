@@ -13,11 +13,13 @@ import android.widget.Toast;
 
 import com.example.g1cafetinues.R;
 import com.example.g1cafetinues.interfaces.ApiServices;
+import com.example.g1cafetinues.interfaces.UrlApi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -73,6 +75,11 @@ public class DeletePedidoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        retrofit = new Retrofit.Builder()
+                .baseUrl(UrlApi.UrlBase)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         View vista=inflater.inflate(R.layout.fragment_delete_pedido, container, false);
         id=vista.findViewById(R.id.borrarpedidoid);
         borrar=vista.findViewById(R.id.Button_BorrarPedido);

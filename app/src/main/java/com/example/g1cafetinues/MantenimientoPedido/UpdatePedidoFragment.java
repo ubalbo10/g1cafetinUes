@@ -93,10 +93,11 @@ public class UpdatePedidoFragment extends Fragment {
 
         View vista=inflater.inflate(R.layout.fragment_update_pedido, container, false);
         idpedido=vista.findViewById(R.id.editidpedido);
-        idubicacion=vista.findViewById(R.id.editIdUbicacion);
+        idubicacion=vista.findViewById(R.id.editidubicacioncrearpedido);
         idestado=vista.findViewById(R.id.editIdestado);
         idrepartidor=vista.findViewById(R.id.editidrepartirdor);
         idtrabajador=vista.findViewById(R.id.editidtrabajadorcrearpedido);
+        idruta=vista.findViewById(R.id.editidubicacioncrearpedido);
         cliente=vista.findViewById(R.id.editclientepedido);
         parallevar=vista.findViewById(R.id.editllevar);
         aceptar=vista.findViewById(R.id.button_aceptar_agregar);
@@ -109,7 +110,10 @@ public class UpdatePedidoFragment extends Fragment {
                 service.ActualizarPedido(idpedido.getText().toString(),
                         idruta.getText().toString(), Integer.valueOf(idestado.getText().toString()),
                         idtrabajador.getText().toString(),idrepartidor.getText().toString(),
-                        idubicacion.getText().toString(),fechaa,cliente.getText().toString(),Integer.parseInt(parallevar.getText().toString())).
+                        idubicacion.getText().toString(),
+                        fechaa,
+                        cliente.getText().toString(),
+                        Integer.parseInt(parallevar.getText().toString())).
                         enqueue(new Callback<String>() {
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
