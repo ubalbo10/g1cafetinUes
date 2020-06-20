@@ -110,7 +110,7 @@ public class ActualizarFacultadFragment extends Fragment {
 
                         List<Facultad> locales=response.body();
                         idFacultad.setText(locales.get(0).getIDFACULTAD().toString());
-                        nombreFacultad.setText(locales.get(0).getNOMFACULTAD());
+                        nombreFacultad.setText(locales.get(0).getNOMFACULTAD().toString());
                     }
 
                     @Override
