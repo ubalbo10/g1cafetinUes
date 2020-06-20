@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginVertical="90dp"
+    tools:context="com.example.g1cafetinues.Mantenimiento_Local.MantenimientoLocalFragment">
+
+
+    <Button
+        android:id="@+id/btn_AgregarUbicacion"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="agregar Ubicacion" />
+
+    <Button
+        android:id="@+id/btn_actualizarUbicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Actualizar Ubicacion" />
+
+    <Button
+        android:id="@+id/btn_consultarUbicacion"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar Ubicacion" />
+
+    <Button
+        android:id="@+id/btn_eliminarUbicacion"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Ubicacion" />
+</LinearLayout>

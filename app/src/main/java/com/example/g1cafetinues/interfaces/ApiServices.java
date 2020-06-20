@@ -1,15 +1,13 @@
 package com.example.g1cafetinues.interfaces;
 
-import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
+import com.example.g1cafetinues.clases.EstadoPedido;
+import com.example.g1cafetinues.clases.Facultad;
 import com.example.g1cafetinues.clases.Local;
-import com.example.g1cafetinues.clases.Menu;
-import com.example.g1cafetinues.clases.Pedido;
-import com.example.g1cafetinues.clases.Producto;
-import com.example.g1cafetinues.clases.ProductoApi;
-import com.example.g1cafetinues.clases.Trabajador;
-import com.example.g1cafetinues.clases.Usuario;
+import com.example.g1cafetinues.clases.Repartidor;
+import com.example.g1cafetinues.clases.TLocal;
+import com.example.g1cafetinues.clases.Ubicacion;
 import com.google.gson.internal.bind.JsonTreeReader;
 
 import java.util.ArrayList;
@@ -168,7 +166,6 @@ public interface ApiServices {
     @GET("locales")
     Call<List<Local>> ObtenerLocales();
 
-
     //Metodos para detalle producto pedido
     @POST("detalle-producto-pedido")
     Call<List<DetalleProductoPedido>> obtenerDetalleProductoPedido(@Query("IDDETALLE") Integer idDetalle);
@@ -214,4 +211,3 @@ public interface ApiServices {
 //si ponemos query en lugar de path agrega ?nombre="guillermo"
 
 
-//obtener y insertar ya los tenes listo de empleado
