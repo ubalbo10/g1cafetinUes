@@ -229,4 +229,42 @@
         android:id="@+id/eliminarDetalleProductoPedidoFragment"
         android:name="com.example.g1cafetinues.detalle_producto_pedido.EliminarDetalleProductoPedidoFragment"
         android:label="EliminarDetalleProductoPedidoFragment" />
+    <fragment
+        android:id="@+id/menuMantenimientoFragment"
+        android:name="com.example.g1cafetinues.MantenimientoMenu.MenuMantenimientoFragment"
+        android:label="fragment_menu_mantenimiento"
+        tools:layout="@layout/fragment_menu_mantenimiento" >
+        <action
+            android:id="@+id/action_menuMantenimientoFragment_to_borrarMenuFragment"
+            app:destination="@id/borrarMenuFragment" />
+        <action
+            android:id="@+id/action_menuMantenimientoFragment_to_consultarMenuFragment"
+            app:destination="@id/consultarMenuFragment" />
+        <action
+            android:id="@+id/action_menuMantenimientoFragment_to_actualizarMenuFragment"
+            app:destination="@id/actualizarMenuFragment" />
+        <action
+            android:id="@+id/action_menuMantenimientoFragment_to_addMenuFragment"
+            app:destination="@id/addMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMenuFragment"
+        android:name="com.example.g1cafetinues.MantenimientoMenu.AddMenuFragment"
+        android:label="fragment_add_menu"
+        tools:layout="@layout/fragment_add_menu" />
+    <fragment
+        android:id="@+id/actualizarMenuFragment"
+        android:name="com.example.g1cafetinues.MantenimientoMenu.ActualizarMenuFragment"
+        android:label="fragment_actualizar_menu"
+        tools:layout="@layout/fragment_actualizar_menu" />
+    <fragment
+        android:id="@+id/borrarMenuFragment"
+        android:name="com.example.g1cafetinues.MantenimientoMenu.BorrarMenuFragment"
+        android:label="fragment_borrar_menu"
+        tools:layout="@layout/fragment_borrar_menu" />
+    <fragment
+        android:id="@+id/consultarMenuFragment"
+        android:name="com.example.g1cafetinues.MantenimientoMenu.ConsultarMenuFragment"
+        android:label="fragment_consultar_menu"
+        tools:layout="@layout/fragment_consultar_menu" />
 </navigation>

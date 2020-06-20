@@ -4,6 +4,7 @@ import com.example.g1cafetinues.clases.Categoria;
 import com.example.g1cafetinues.clases.DetalleProductoPedido;
 import com.example.g1cafetinues.clases.Encargado;
 import com.example.g1cafetinues.clases.Local;
+import com.example.g1cafetinues.clases.Menu;
 import com.example.g1cafetinues.clases.Pedido;
 import com.example.g1cafetinues.clases.Producto;
 import com.example.g1cafetinues.clases.ProductoApi;
@@ -22,6 +23,7 @@ import retrofit2.http.Query;
 
 public interface ApiServices {
 
+
     @POST("registrar-pedido-flujo")
     Call<String>GuardarPedido(@Query("idPedido") String id,
                               @Query("esParaLlevar") Integer esparallevar,
@@ -29,6 +31,25 @@ public interface ApiServices {
                               @Query("fechaPedido") String fecha,
                               @Query("nombreCliente") String nombrecliente,
                               @Query("detalle") ArrayList<String> detalle);
+    //crud menu
+    @POST("actualizar-menu")
+    Call<String> ActualizarMenu(@Query("IDMENU") String idmenu,
+                             @Query("PRECIOMENU") String precio,
+                             @Query("FECHADESDEMENU") String fechaini,
+                             @Query("FECHAHASTAMENU") String fechafin);
+
+    @POST("registrar-menu")
+    Call<String> AgregarMenu(@Query("IDMENU") String idmenu,
+                                 @Query("PRECIOMENU") String precio,
+                                 @Query("FECHADESDEMENU") String fechaini,
+                                 @Query("FECHAHASTAMENU") String fechafin);
+    //CONSULTAR
+    @POST("obtener-menu")
+    Call<Menu> ObtenerMenu(@Query("IDMENU") String idpedido);
+    //borrar
+    @POST("eliminar-menu")
+    Call<String> EliminarMenu(@Query("IDMENU") String idpedido);
+
     //crud pedido
     @POST("actualizar-pedido")
     Call<String> ActualizarPedido(@Query("IDPEDIDO") String idpedido,

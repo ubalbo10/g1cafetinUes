@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:layout_marginTop="30dp"
+tools:context=".MantenimientoMenu.BorrarMenuFragment">
+
+<!-- TODO: Update blank fragment layout -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="30dp"
+    android:layout_gravity="center_vertical"
+    android:layout_marginBottom="30dp"
+    android:text="Eliminar menu" />
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Ingrese el id del pedido a eliminar"
+    android:inputType="text"
+    android:id="@+id/borrarmenuid"
+    />
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Borrar"
+    android:id="@+id/Button_Borrarmenu"/>
+
+
+
+</LinearLayout>

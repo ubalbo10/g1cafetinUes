@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Productos" />
         <item
+            android:id="@+id/menuMantenimientoFragment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Menus" />
+        <item
             android:id="@+id/mantenimientoCategoriasFragment"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Categorias" />

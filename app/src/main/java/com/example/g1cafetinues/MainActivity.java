@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         // aqui se configuran los fragmentos de la barra lateral
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.logginFragment, R.id.homeClienteFragment,
+                R.id.logginFragment, R.id.homeClienteFragment,R.id.menuMantenimientoFragment,
                 R.id.mantenimientoProductosFragment, R.id.mantenimientoCategoriasFragment, R.id.homeClienteFragment,
                 R.id.mantenimientoPedidoFragment,R.id.mantenimientoEmpleadoFragment, R.id.nav_share, R.id.nav_send,R.id.mantenimimientoDetalleProductoPedidoFragment)
                 .setDrawerLayout(drawer)

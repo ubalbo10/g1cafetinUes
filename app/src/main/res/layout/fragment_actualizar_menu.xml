@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="30dip"
+    android:stretchColumns="1" >
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Menu:"/>
+    </LinearLayout>
+
+    <TableRow>
+        <TextView android:text="IdMenu"/>
+        <EditText
+            android:id="@+id/editidmenuAct"
+
+            android:maxLength="10" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="precio menu" />
+        <EditText
+            android:id="@+id/editpreciomenuactualizar"
+            android:inputType="numberDecimal"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="fecha inicio" />
+        <EditText
+            android:id="@+id/editfechainiactualizar"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="fecha fin" />
+        <EditText
+            android:id="@+id/editfechafinactualizar"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/button_aceptar_agregarmenuact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Aceptar" />
+
+        <Button
+            android:id="@+id/button_limpiar_addmenuact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Limpiar" />
+    </LinearLayout>
+</TableLayout>
