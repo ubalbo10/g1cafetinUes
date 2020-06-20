@@ -62,7 +62,7 @@
         android:layout_marginBottom="61dp"
         android:ems="10"
         android:hint="Contrasena"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/Ingresar"
         app:layout_constraintEnd_toEndOf="@+id/editText_User"
         app:layout_constraintStart_toStartOf="@+id/editText_User"
