@@ -230,7 +230,7 @@ public interface ApiServices {
     Call<String> eliminarCambioPrecio(@Query("IDCAMBIOPRECIO") Integer idCambioPrecio);
 
     //VERIFICAR DESDE AQUI
-    
+
     //////////////////////Metodos para CRUD LOCAL/////////////////////////////
     @POST("obtener-local")
     Call<List<TLocal>> obtenerLocal(@Query("IDLOCAL") Integer idLocal);

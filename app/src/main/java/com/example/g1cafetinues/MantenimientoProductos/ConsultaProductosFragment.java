@@ -81,14 +81,14 @@ public class ConsultaProductosFragment extends Fragment {
                                     mostrarprecio.setText(respuesta.getPRECIOUNITARIO().toString());
                                     mostrarExistencia.setText(respuesta.getEXISTENCIA().toString());
                                 }else{
-                                    Toast.makeText(getActivity(),"no tiene este producto",Toast.LENGTH_LONG).show();
+                                //    Toast.makeText(requireActivity(),"no tiene este producto",Toast.LENGTH_LONG).show();
                                 }
 
                             }
 
                             @Override
                             public void onFailure(Call<ProductoApi> call, Throwable t) {
-                                Toast.makeText(getActivity(),"fallo ws",Toast.LENGTH_LONG).show();
+                              //  Toast.makeText(requireActivity(),"fallo ws",Toast.LENGTH_LONG).show();
                             }
                         });
             }
