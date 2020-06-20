@@ -43,6 +43,7 @@ public class ConsultarFacultadFragment extends Fragment {
         Button buscar=vista.findViewById(R.id.btn_buscarFacultad);
 
         final EditText idBuscarFacultad=vista.findViewById(R.id.editText_buscarIdFacultad);
+
         final TextView idFacultad=vista.findViewById(R.id.textView_buscarIdFacultad);
         final TextView nombreFacultad=vista.findViewById(R.id.textView_buscarNombreFacultad);
 

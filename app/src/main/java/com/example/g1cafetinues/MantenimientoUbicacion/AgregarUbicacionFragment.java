@@ -55,7 +55,7 @@ public class AgregarUbicacionFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                Call<String> call=apiServices.actualizarUbicacion(Integer.parseInt(idUbicacion.getText().toString()),
+                Call<String> call=apiServices.agregarUbicacion(Integer.parseInt(idUbicacion.getText().toString()),
                         descUbicacion.getText().toString());
 
                 call.enqueue(new Callback<String>() {
@@ -67,7 +67,7 @@ public class AgregarUbicacionFragment extends Fragment {
                             return;
                         }
 
-                        Toast.makeText(getContext(),"Ubicacion Actualizado",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Ubicacion Agregada",Toast.LENGTH_LONG).show();
                         idUbicacion.setText("");
                         descUbicacion.setText("");
                     }

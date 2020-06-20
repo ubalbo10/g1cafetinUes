@@ -11,11 +11,11 @@ public class Ubicacion {
 
     @SerializedName("DESCUBICACION")
     @Expose
-    private Integer DESCUBICACION;
+    private String DESCUBICACION;
 
     public Ubicacion(){}
 
-    public Ubicacion(Integer IDUBICACION, Integer DESCUBICACION) {
+    public Ubicacion(Integer IDUBICACION, String DESCUBICACION) {
         this.IDUBICACION = IDUBICACION;
         this.DESCUBICACION = DESCUBICACION;
     }
@@ -28,11 +28,11 @@ public class Ubicacion {
         this.IDUBICACION = IDUBICACION;
     }
 
-    public Integer getDESCUBICACION() {
+    public String getDESCUBICACION() {
         return DESCUBICACION;
     }
 
-    public void setDESCUBICACION(Integer DESCUBICACION) {
+    public void setDESCUBICACION(String DESCUBICACION) {
         this.DESCUBICACION = DESCUBICACION;
     }
 }

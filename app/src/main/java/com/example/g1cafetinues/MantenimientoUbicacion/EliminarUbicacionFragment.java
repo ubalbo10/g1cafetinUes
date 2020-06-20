@@ -50,7 +50,7 @@ public class EliminarUbicacionFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                Call<String> call=apiServices.eliminarEstadoPedido(Integer.parseInt(eliminarUbicacion.getText().toString()));
+                Call<String> call=apiServices.eliminarUbicacion(Integer.parseInt(eliminarUbicacion.getText().toString()));
 
                 call.enqueue(new Callback<String>() {
                     @Override

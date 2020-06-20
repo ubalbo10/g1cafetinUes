@@ -39,6 +39,7 @@ public class AgregarCambioPrecioFragment extends Fragment {
         Button agregar=vista.findViewById(R.id.btn_AgregarCambioPrecio);
 
         final TextView idCambioPrecio=vista.findViewById(R.id.editText_agregarCambioPrecio);
+
         final TextView idProducto=vista.findViewById(R.id.editText_agregarIdProducto);
         final TextView fechaCambio=vista.findViewById(R.id.editText_agregarFechaCambio);
         final TextView precioNuevo=vista.findViewById(R.id.editText_agregarPrecioNuevo);

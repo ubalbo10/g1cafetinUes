@@ -65,7 +65,7 @@
             android:gravity="start|top"
             android:layout_marginBottom="122dp"
             android:hint="Ingrese ID Facultad"
-            android:inputType="textMultiLine" />
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/textView_buscarIdFacultad"

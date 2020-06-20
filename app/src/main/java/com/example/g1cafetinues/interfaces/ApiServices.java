@@ -83,73 +83,73 @@ public interface ApiServices {
 
 
     //////////////////////Metodos para CRUD FACULTAD/////////////////////////////
-    @POST("facultad")
+    @POST("obtener-facultad")
     Call<List<Facultad>> obtenerFacultad(@Query("IDFACULTAD") Integer idFacultad);
 
-    @POST("facultad")
+    @POST("registrar-facultad")
     Call<String> agregarFacultad(@Query("IDFACULTAD") Integer idFacultad,
                               @Query("NOMFACULTAD") String nombreFacultad);
 
-    @POST("facultad")
+    @POST("actualizar-facultad")
     Call<String> actualizarFacultad(@Query("IDFACULTAD") Integer idFacultad,
                                  @Query("NOMFACULTAD") String nombreFacultad);
 
-    @POST("facultad")
+    @POST("eliminar-facultad")
     Call<String> eliminarFacultad(@Query("IDFACULTAD") Integer idFacultad);
 
 
     //////////////////////Metodo CRUD REPARTIDOR////////////////////////////////////////
-    @POST("repartidor")
+    @POST("obtener-repartidor")
     Call<List<Repartidor>> obtenerRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
 
-    @POST("repartidor")
+    @POST("registrar-repartido")
     Call<String> agregarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
-                                   @Query("NOMBREREPARTIDOR") String nombre,
+                                   @Query("NOMREPARTIDOR") String nombre,
                                    @Query("APEREPARTIDOR") String apellido,
                                    @Query("TELREPARTIDOR") Integer telefono);
 
-    @POST("repartidor")
+    @POST("actualizar-repartidor")
     Call<String> actualizarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor,
-                                      @Query("NOMBREREPARTIDOR") String nombre,
+                                      @Query("NOMREPARTIDOR") String nombre,
                                       @Query("APEREPARTIDOR") String apellido,
                                       @Query("TELREPARTIDOR") Integer telefono);
 
-    @POST("repartidor")
+    @POST("eliminar-repartidor")
     Call<String> eliminarRepartidor(@Query("IDREPARTIDOR") Integer idRepartidor);
 
 
 
     //////////////////////Metodo CRUD ESTADO PEDIDO////////////////////////////////////////
-    @POST("ESTADO PEDIDO")
+    @POST("obtener-estado-pedido")
     Call<List<EstadoPedido>> obtenerEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
 
-    @POST("ESTADO PEDIDO")
+    @POST("registrar-estado-pedido")
     Call<String> agregarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
                                      @Query("DESCESTADOPEDIDO") String desEstadoPedido);
 
-    @POST("ESTADO PEDIDO")
+    @POST("actualizar-estado-pedido")
     Call<String> actualizarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido,
                                       @Query("DESCESTADOPEDIDO") String desEstadoPedido);
 
-    @POST("ESTADO PEDIDO")
+    @POST("eliminar-estado-pedido")
     Call<String> eliminarEstadoPedido(@Query("IDESTADOPEDIDO") Integer idEstadoPedido);
 
 
 
 
     //////////////////////Metodo CRUD UBICACION////////////////////////////////////////
-    @POST("UBICACION")
+    @POST("obtener-ubicacion")
     Call<List<Ubicacion>> obtenerUbicacion(@Query("IDUBICACION") Integer idUbicacion);
 
-    @POST("UBICACION")
+    @POST("registrar-ubicacion")
     Call<String> agregarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
                                      @Query("DESCUBICACION") String desUbicacion);
 
-    @POST("UBICACION")
+    @POST("actualizar-ubicacion")
     Call<String> actualizarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
                                      @Query("DESCUBICACION") String desUbicacion);
 
-    @POST("UBICACION")
+    @POST("eliminar-ubicacion")
     Call<String> eliminarUbicacion(@Query("IDUBICACION") Integer idUbicacion);
 
 

@@ -86,7 +86,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="Ingresar Nombre"
-            android:inputType="number" />
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/editText_agregarApellidoRepartidor"
@@ -97,7 +97,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="Ingresar Apellido"
-            android:inputType="number" />
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/editText_agregarTelefonoRepartidor"

@@ -8,9 +8,9 @@ public class Repartidor {
     @Expose
     private Integer IDREPARTIDOR;
 
-    @SerializedName("NOMBREREPARTIDOR")
+    @SerializedName("NOMREPARTIDOR")
     @Expose
-    private String NOMBREREPARTIDOR;
+    private String NOMREPARTIDOR;
 
     @SerializedName("APEREPARTIDOR")
     @Expose
@@ -24,7 +24,7 @@ public class Repartidor {
 
     public Repartidor(Integer IDREPARTIDOR, String NOMBREREPARTIDOR, String APEREPARTIDOR, Integer TELREPARTIDOR) {
         this.IDREPARTIDOR = IDREPARTIDOR;
-        this.NOMBREREPARTIDOR = NOMBREREPARTIDOR;
+        this.NOMREPARTIDOR = NOMBREREPARTIDOR;
         this.APEREPARTIDOR = APEREPARTIDOR;
         this.TELREPARTIDOR = TELREPARTIDOR;
     }
@@ -38,11 +38,11 @@ public class Repartidor {
     }
 
     public String getNOMBREREPARTIDOR() {
-        return NOMBREREPARTIDOR;
+        return NOMREPARTIDOR;
     }
 
     public void setNOMBREREPARTIDOR(String NOMBREREPARTIDOR) {
-        this.NOMBREREPARTIDOR = NOMBREREPARTIDOR;
+        this.NOMREPARTIDOR = NOMBREREPARTIDOR;
     }
 
     public String getAPEREPARTIDOR() {

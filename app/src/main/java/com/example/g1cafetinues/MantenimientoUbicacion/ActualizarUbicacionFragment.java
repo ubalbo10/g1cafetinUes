@@ -64,13 +64,12 @@ public class ActualizarUbicacionFragment extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(!response.isSuccessful()){
-                            Toast.makeText(getContext(),"Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(),"Error Respose", Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
                             return;
                         }
 
-                        Toast.makeText(getContext(),"Estado Pedido Actualizado",Toast.LENGTH_LONG).show();
-                        idBuscarUbicacion.setText("");
+                        Toast.makeText(getContext(),"Ubicacion Actualizado",Toast.LENGTH_LONG).show();
                         idUbicacion.setText("");
                         descUbicacion.setText("");
                     }

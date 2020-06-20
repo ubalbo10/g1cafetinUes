@@ -22,7 +22,7 @@
             tools:ignore="RtlCompat" />
 
         <Button
-            android:id="@+id/btn_buscarUbicacion"
+            android:id="@+id/btn_buscarIDUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="75dp"
@@ -58,14 +58,14 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText_buscarIdUbicacion"
+            android:id="@+id/editText_buscarIDUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
             android:layout_marginBottom="122dp"
             android:hint="Ingrese ID Ubicacion"
-            android:inputType="textMultiLine" />
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/textView_buscarIdUbicacion"

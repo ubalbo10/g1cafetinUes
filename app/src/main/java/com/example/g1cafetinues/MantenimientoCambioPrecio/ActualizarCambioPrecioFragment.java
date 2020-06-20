@@ -73,12 +73,12 @@ public class ActualizarCambioPrecioFragment extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(!response.isSuccessful()){
-                            Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(),"Error Response",Toast.LENGTH_LONG).show();
                             Log.d("ERROR", "onResponse: "+response.code());
                             return;
                         }
 
-                        Toast.makeText(getContext(),"Detalle Actualizado",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Cambio Precio Agregado",Toast.LENGTH_LONG).show();
                         idBuscarCambioPrecio.setText("");
                         idCambioPrecio.setText("");
                         idProducto.setText("");
@@ -89,7 +89,7 @@ public class ActualizarCambioPrecioFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Error Failure",Toast.LENGTH_LONG).show();
                     }
                 });
             }

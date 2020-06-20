@@ -39,11 +39,12 @@ public class ConsultarUbicacionFragment extends Fragment {
 
         View vista=inflater.inflate(R.layout.fragment_consultar_ubicacion, container, false);
 
-        Button buscar=vista.findViewById(R.id.btn_buscarUbicacion);
+        Button buscar=vista.findViewById(R.id.btn_buscarIDUbicacion);
 
-        final EditText idBuscarUbicacion=vista.findViewById(R.id.editText_buscarIdUbicacion);
-        final TextView idUbicacion=vista.findViewById(R.id.editText_actulizarIdUbicacion);
-        final TextView descUbicacion=vista.findViewById(R.id.editText_actualizarDescUbicacion);
+        final EditText idBuscarUbicacion=vista.findViewById(R.id.editText_buscarIDUbicacion);
+
+        final TextView idUbicacion=vista.findViewById(R.id.textView_buscarIdUbicacion);
+        final TextView descUbicacion=vista.findViewById(R.id.textView_buscarDescUbicacion);
 
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +67,10 @@ public class ConsultarUbicacionFragment extends Fragment {
                             return;
                         }
 
+                        Log.d("HOLA", "onResponse: "+response.body().get(0).getIDUBICACION().toString());
                         List<Ubicacion> ubicacions=response.body();
                         idUbicacion.setText(ubicacions.get(0).getIDUBICACION().toString());
-                        descUbicacion.setText(ubicacions.get(0).getDESCUBICACION().toString());
+                        descUbicacion.setText(ubicacions.get(0).getDESCUBICACION());
                     }
 
                     @Override
