@@ -311,10 +311,9 @@ public interface ApiServices {
     @POST("registrar-ubicacion")
     Call<String> agregarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
                                   @Query("DESCUBICACION") String desUbicacion);
-
     @POST("actualizar-ubicacion")
-    Call<String> actualizarUbicacion(@Query("IDUBICACION") Integer idUbicacion,
-                                     @Query("DESCUBICACION") String desUbicacion);
+    Call<String> actualizarUbicacion(@Query("DESCUBICACION") String desUbicacion,
+                                     @Query("IDUBICACION") Integer idUbicacion);
 
     @POST("eliminar-ubicacion")
     Call<String> eliminarUbicacion(@Query("IDUBICACION") Integer idUbicacion);

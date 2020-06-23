@@ -57,8 +57,8 @@ public class ActualizarUbicacionFragment extends Fragment {
 
                 ApiServices apiServices=retrofit.create(ApiServices.class);
 
-                Call<String> call=apiServices.actualizarUbicacion(Integer.parseInt(idUbicacion.getText().toString()),
-                        descUbicacion.getText().toString());
+                Call<String> call=apiServices.actualizarUbicacion(descUbicacion.getText().toString(),
+                        Integer.parseInt(idUbicacion.getText().toString()));
 
                 call.enqueue(new Callback<String>() {
                     @Override
