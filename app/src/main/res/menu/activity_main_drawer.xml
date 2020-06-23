@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Categorias" />
         <item
-            android:id="@+id/homeClienteFragment"
+            android:id="@+id/logginFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Venta al cliente" />
         <item
